@@ -10,8 +10,6 @@
 <div>02-2-2</div>
 <div>02-2-2</div>
 <div>02-2-2</div>
-<div>±»¶ß</div>
-<div>±»¶ß</div>
-<div>±»¶ß</div>
+
 </body>
 </html>
