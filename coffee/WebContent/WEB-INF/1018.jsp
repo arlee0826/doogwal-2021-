@@ -1,17 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-<div>02-2-2</div>
-<div>02-2-2</div>
-<div>02-2-2</div>
-<div>굳뜨</div>
-<div>굳뜨</div>
-<div>굳뜨</div>
+
 </body>
 </html>
