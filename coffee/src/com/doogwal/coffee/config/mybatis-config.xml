@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 클린턴 비긴이 만듦  -->
+<configuration>
+<!-- jsp에서 null을  -->
+<settings>
+<setting name="jdbcTypeForNull" value="NULL" />
+</settings>
+
+<!-- alias -->
+<typeAliases>
+</typeAliases>
+
+<!--  데이터 베이스와 연결 환경 설정 -->
+<environments default="development">
+	<environment id="development">
+		<transactionManager type="JDBC"/>
+		<!--  mybatis dataSource 클래스가 -->
+		<dataSource type="JNDI">
+			<!-- corba -->
+			<property name="data_source" value="java:comp/env/oraclexe"/>
+			<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="driver" value ="oracle.jdbc.OracleDriver" />
+			<property name="username" value="coffee" />
+			<property name="password" value="1111" />
+		</dataSource>
+	</environment>
+</environments>
+
+<!--  mapper 경로 설정 '/' -->
+<mappers>
+</mappers>
+
+</configuration>
