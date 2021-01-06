@@ -184,7 +184,6 @@
             cursor: pointer;
             box-shadow:1px 1px 1px 1px #999;
         }
-   
     </style>
 </head>
 <body>
@@ -225,13 +224,13 @@
     <!-- content -->
     <div id="content">
 
-        <form onsubmit="return false">
+        <form>
             <div class="form_title"><h1>모임 개설하기</h1></div>
             <table>
                 <tr>
                     <td class="first_td">모임 이름</td>
                     <td class="second_td">
-                        <input type="text" maxlength="10" class="input_style1 v1">
+                        <input type="text" maxlength="10" class="input_style1 v1" id="nameGathering">
                         <span class="counting_characters v1_v">(0/10자)</span>
                     </td>
                 </tr>
@@ -239,10 +238,10 @@
                     <td class="first_td">날짜</td>
                     <td class="second_td">
                         <input type="date" class="date_input">
-                        <input type="time" class="input_time">
+                        <input type="time" class="input_time" id="startTime">
                         <span class="">~</span>
-                        <input type="time" class="input_time">
-                        <label class="check_date"><input type="checkbox" class="checkbox_date">하루종일</label>
+                        <input type="time" class="input_time" id="endTime">
+                        <label class="check_date"><input type="checkbox" class="checkbox_date" name="allDay">하루종일</label>
                     </td>
                 </tr>
                 <tr class="local_input">
@@ -258,14 +257,14 @@
                 <tr class="detail_input">
                     <td class="first_td">상세</td>
                     <td class="second_td">
-                        <textarea maxlength="100" class="v2"></textarea>
+                        <textarea maxlength="100" class="v2" id="meetingDetail"></textarea>
                         <span class="counting_characters v2_v">(0/100자)</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="first_td">회비</td>
                     <td class="second_td">
-                        <input type="number" class="input_style1">
+                        <input type="number" class="input_style1" value="0" id="dues">
                         <span class="span_one">원</span>
                     </td>
                 </tr>
@@ -279,9 +278,9 @@
                         </div>
                     </td>
                 </tr>
-                <button class="create_end_btn">모임 만들기</button>
                 <div id="map" class="local_map"></div>
             </table>
+            <input type="button" class="create_end_btn" value="모임만들기">
         </form>
     </div>
     <!-- //content -->
@@ -353,6 +352,7 @@
         position: new daum.maps.LatLng(37.537187, 127.005476),
         map: map
     });
+    let mapnum = 0;  //유효성 검사 데이터
     function sample5_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
@@ -371,7 +371,7 @@
 
                         // -------------------------------------------------------------------해당 주소에 대한 좌표를 받아서
                         var coords = new daum.maps.LatLng(result.y, result.x);
-                        alert(coords);
+                        // alert(coords);
                         // 지도를 보여준다.
                         mapContainer.style.display = "block";
                         map.relayout();
@@ -380,6 +380,7 @@
                         // 마커를 결과값으로 받은 위치로 옮긴다.
                         marker.setPosition(coords)
                         // alert(coords);//-----------------------------------------------------주소 중요
+                        mapnum++
                     }
                 });
             }
@@ -422,7 +423,45 @@
         }else{
             $(".input_time").prop("disabled",false);
         }
-    })
+    });
+
+    $(".create_end_btn").click(function () {
+        if ($("#nameGathering").val() === "") {
+            alert("모임 이름을 작성해주세요");
+            return false;
+        }//모임이름
+
+        if ($(".date_input").val()===""){
+         alert("날짜를 정해주세요.");
+            return false;
+        }
+        if
+        (
+            ($("input:checkbox[name=allDay]:checked").length<1)
+            &&
+            (($("#startTime").val()==="")||($("#endTime").val()===""))
+        )
+        {
+                alert("날짜에서 시간을 설정해주세요.");
+            return false;
+        }
+        if(mapnum<1){
+            alert("장소를 선택하세요");
+            return false;
+        }
+       if($("#meetingDetail").val() ===""){
+            alert("상세내용을 적어주세요");
+           return false;
+        }
+        if($("#dues").val() ===""){
+            alert("회비를 적어주세요!");
+            return false;
+        }
+      else
+         $(".create_end_btn").attr("type","submit");
+      return true;
+    });
+
 </script>
 </body>
 </html>
