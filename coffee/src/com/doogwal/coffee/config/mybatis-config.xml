@@ -32,5 +32,4 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <!--  mapper 경로 설정 '/' -->
 <mappers>
 </mappers>
-
 </configuration>
