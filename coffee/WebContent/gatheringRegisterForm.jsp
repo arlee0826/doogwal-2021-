@@ -224,7 +224,7 @@
     <!-- content -->
     <div id="content">
 
-        <form>
+        <form action="/gatheringRegister.coffee" method="post">
             <div class="form_title"><h1>모임 개설하기</h1></div>
             <table>
                 <tr>
@@ -237,7 +237,7 @@
                 <tr>
                     <td class="first_td">날짜</td>
                     <td class="second_td">
-                        <input type="date" class="date_input">
+                        <input type="date" class="date_input" id="date">
                         <input type="time" class="input_time" id="startTime">
                         <span class="">~</span>
                         <input type="time" class="input_time" id="endTime">

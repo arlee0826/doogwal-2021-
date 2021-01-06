@@ -11,8 +11,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 <!-- alias -->
 <typeAliases>
+		<typeAlias alias="Gathering"
+		 type="com.doogwal.coffee.vo.Gathering"/>
 </typeAliases>
-
 <!--  데이터 베이스와 연결 환경 설정 -->
 <environments default="development">
 	<environment id="development">
@@ -31,5 +32,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 <!--  mapper 경로 설정 '/' -->
 <mappers>
+		<mapper resource="com/doogwal/coffee/mapper/gatherings.xml" />
 </mappers>
 </configuration>
