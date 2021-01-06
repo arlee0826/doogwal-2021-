@@ -13,7 +13,7 @@ public class PaginateUtil {
 		//한 페이지당 게시물수 : numPage
 		//한 페이지당 보여질 블록수 : numBlock
 		//주소 : url
-		//파라미터 : param
+		//파라미터 : parameter
 		
 		//전체 페이지수
 		int totalPage = (int)Math.ceil((double)total/numPage);
