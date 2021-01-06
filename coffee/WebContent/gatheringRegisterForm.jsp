@@ -172,7 +172,7 @@
         }
         .my_address_label{ /*<input>주소 라벨 */
             display: inline-block;
-            width: 350px;
+            width: 400px;
             height: 40px;
             border: 1px solid #bebebe;
             vertical-align: middle;
@@ -388,13 +388,14 @@
     }
     //end 주소 찾기 . 지도 보이기
     //--------------------------------------------------준비물 추가
+
     $(".add_btn").click(createbox);
     let countnumber = 0;
     function createbox(){
         const value = $(".add_box_input").val();
         $(".add_box_input").val("").focus();
         const $a = $("<a class='delete_btn'>").append($("<i class='fas fa-times'>"));
-        const $span = $("<span>").text(value);
+        const $span = $("<span class='eq_num'>").text(value);
         $("<div class='each_preparation'>").append($span,$a)
             .appendTo(".preparation_box");
         $('.v3_v').text("(0/10자)");
@@ -409,7 +410,6 @@
     $(document).on("click",".delete_btn",function () {//동적으로 추가된 것은 이렇게 변경해야 이벤트 적용됨
         $(this).parent().remove();
         countnumber--;
-
         $(".add_box_input").attr("disabled",false);
         $(".add_btn").css({"pointer-events":"auto",
             "background-color":"#FF9100"});
@@ -419,13 +419,13 @@
     $(".checkbox_date").click(function () {
         if($(this).prop("checked")==true){
             $(".input_time").prop("disabled",true);
-
         }else{
             $(".input_time").prop("disabled",false);
         }
     });
 
     $(".create_end_btn").click(function () {
+
         if ($("#nameGathering").val() === "") {
             alert("모임 이름을 작성해주세요");
             return false;
@@ -436,13 +436,9 @@
             return false;
         }
         if
-        (
-            ($("input:checkbox[name=allDay]:checked").length<1)
-            &&
-            (($("#startTime").val()==="")||($("#endTime").val()===""))
-        )
+        (($("input:checkbox[name=allDay]:checked").length<1) && (($("#startTime").val()==="")||($("#endTime").val()==="")))
         {
-                alert("날짜에서 시간을 설정해주세요.");
+            alert("날짜에서 시간을 설정해주세요.");
             return false;
         }
         if(mapnum<1){
@@ -457,10 +453,18 @@
             alert("회비를 적어주세요!");
             return false;
         }
-      else
-         $(".create_end_btn").attr("type","submit");
+      else {
+            $(".create_end_btn").attr("type", "submit");
+            $nu = $(".eq_num").eq(0);
+            $nn = $(".eq_num").eq(1)
+
+            var materials = new Array();
+            materials[0] = $nu.text();
+            materials[1] = $nn.text();
+        }
       return true;
     });
+
 
 </script>
 </body>
