@@ -1,8 +1,10 @@
+<%@page import="com.doogwal.coffee.vo.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>    
 <%
-
-%>
+	// 현재 유저가 로그인한 유저인지 확인하는
+	User loginUser = (User)session.getAttribute(User.LOGIN);
+%> 
 <div id="header"><!--header start-->
     <div class="inner">
         <div class="header_logo_search"><!--header_left start-->

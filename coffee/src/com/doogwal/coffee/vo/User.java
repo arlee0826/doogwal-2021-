@@ -10,6 +10,8 @@ public class User {
 	private Date birthDate;
 	private Timestamp regdate;
 	
+	public static final String LOGIN = "loginUser";
+	
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
