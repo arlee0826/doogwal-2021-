@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-주성호 커밋
-성호형 존경합니다
+비밀번호 : 486
 </body>
 </html>
