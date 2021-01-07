@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 주성호 커밋
 성호형 존경합니다
 
@@ -14,5 +15,9 @@
 ..
 
 정진하 곧 집감.....
+=======
+비밀번호 : 1572
+송진현 바보 ㅎㅎ
+>>>>>>> branch 'main' of https://github.com/arlee0826/doogwal.git
 </body>
 </html>
