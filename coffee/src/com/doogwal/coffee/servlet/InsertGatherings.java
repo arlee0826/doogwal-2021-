@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/gatheringRegister.coffee")
-public class InsertGathrings extends HttpServlet{
+public class InsertGatherings extends HttpServlet{
 
  @Override
  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -17,12 +17,10 @@ public class InsertGathrings extends HttpServlet{
 	 String startTime = req.getParameter("startTime");
 	 String endTime = req.getParameter("endTime");
 	 String month = req.getParameter("date");
-	 String name = req.getParameter("nameGathering");
+	 String name = req.getParameter("name");
 	 String address = req.getParameter("address");
 	 String description = req.getParameter("description");
-	 String lat = req.getParameter("lat");
-	 String lng = req.getParameter("lng");
-	 String fee = req.getParameter("dues");
+	 String fee = req.getParameter("fee");
 	 String preparation = req.getParameter("preparation");
 	
 

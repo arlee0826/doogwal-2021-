@@ -46,7 +46,6 @@
             padding-left: 60px;
             border-bottom: 1px solid #bebebe;
             vertical-align: middle;
-            background-color: #F5F5F5;
         }
         .input_style1{ /*<input> 모임이름,장소,회비,준비물 */
             width: 230px;
@@ -172,7 +171,7 @@
         }
         .my_address_label{ /*<input>주소 라벨 */
             display: inline-block;
-            width: 400px;
+            width: 390px;
             height: 40px;
             border: 1px solid #bebebe;
             vertical-align: middle;
@@ -224,23 +223,23 @@
     <!-- content -->
     <div id="content">
 
-        <form action="/gatheringRegister.coffee" method="post">
+        <form action="/gatheringRegister.coffee" method="GET">
             <div class="form_title"><h1>모임 개설하기</h1></div>
             <table>
                 <tr>
                     <td class="first_td">모임 이름</td>
                     <td class="second_td">
-                        <input type="text" maxlength="10" class="input_style1 v1" id="nameGathering">
+                        <input type="text" maxlength="10" class="input_style1 v1" id="nameGathering" name="name" >
                         <span class="counting_characters v1_v">(0/10자)</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="first_td">날짜</td>
                     <td class="second_td">
-                        <input type="date" class="date_input" id="date">
-                        <input type="time" class="input_time" id="startTime">
+                        <input type="date" class="date_input" id="date" name="date">
+                        <input type="time" class="input_time" id="startTime" name="startTime">
                         <span class="">~</span>
-                        <input type="time" class="input_time" id="endTime">
+                        <input type="time" class="input_time" id="endTime" name="endTime">
                         <label class="check_date"><input type="checkbox" class="checkbox_date" name="allDay">하루종일</label>
                     </td>
                 </tr>
@@ -250,6 +249,8 @@
                         <div class="not_required">
                             <input type="text" id="sample5_address" placeholder="주소">
                             <input id="address_content" type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
+                            <input type="hidden" id="address_hidden" name="address">
+                            <input type="hidden" id="location_hidden" name="location">
                         </div>
                         <label for="address_content" class="my_address_label" id="addressContent">주소 찾기</label>
                     </td>
@@ -257,14 +258,14 @@
                 <tr class="detail_input">
                     <td class="first_td">상세</td>
                     <td class="second_td">
-                        <textarea maxlength="100" class="v2" id="meetingDetail"></textarea>
+                        <textarea maxlength="100" class="v2" id="meetingDetail" name="description"></textarea>
                         <span class="counting_characters v2_v">(0/100자)</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="first_td">회비</td>
                     <td class="second_td">
-                        <input type="number" class="input_style1" value="0" id="dues">
+                        <input type="number" class="input_style1" value="0" id="fee" name="fee">
                         <span class="span_one">원</span>
                     </td>
                 </tr>
@@ -274,13 +275,13 @@
                         <input placeholder="최대 2개" maxlength="10" class="add_box_input v3">
                         <a class="add_btn">추가</a>
                         <span class="counting_characters v3_v">(0/10자)</span>
-                        <div class="preparation_box">
-                        </div>
+                        <div class="preparation_box"></div>
+                        <input type="hidden" name="preparation" id="preparation">
                     </td>
                 </tr>
                 <div id="map" class="local_map"></div>
             </table>
-            <input type="button" class="create_end_btn" value="모임만들기">
+            <input type="button"  class="create_end_btn" value="모임만들기">
         </form>
     </div>
     <!-- //content -->
@@ -361,6 +362,7 @@
                 // 주소 정보를 해당 필드에 넣는다.
                 document.getElementById("sample5_address").value = addr;
                 //---------------------------------------------------------------------주소 우회
+                document.getElementById("address_hidden").value = addr;
                 document.getElementById("addressContent").innerHTML = addr;
                 // 주소로 상세 정보를 검색
                 geocoder.addressSearch(data.address, function(results, status) {
@@ -368,7 +370,6 @@
                     if (status === daum.maps.services.Status.OK) {
 
                         var result = results[0]; //첫번째 결과의 값을 활용
-
                         // -------------------------------------------------------------------해당 주소에 대한 좌표를 받아서
                         var coords = new daum.maps.LatLng(result.y, result.x);
                         // alert(coords);
@@ -381,6 +382,7 @@
                         marker.setPosition(coords)
                         // alert(coords);//-----------------------------------------------------주소 중요
                         mapnum++
+                        document.getElementById("location_hidden").value = coords;
                     }
                 });
             }
@@ -449,18 +451,19 @@
             alert("상세내용을 적어주세요");
            return false;
         }
-        if($("#dues").val() ===""){
+        if($("#fee").val() ===""){
             alert("회비를 적어주세요!");
             return false;
         }
-      else {
-            $(".create_end_btn").attr("type", "submit");
+      else {   
             $nu = $(".eq_num").eq(0);
             $nn = $(".eq_num").eq(1)
 
             var materials = new Array();
             materials[0] = $nu.text();
             materials[1] = $nn.text();
+            document.getElementById("preparation").value = materials;
+            $(".create_end_btn").attr("type", "submit");
         }
       return true;
     });
