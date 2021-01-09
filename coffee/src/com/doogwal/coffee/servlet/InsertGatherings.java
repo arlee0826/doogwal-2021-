@@ -24,18 +24,14 @@ import javax.servlet.http.HttpServletResponse;
 	 String fee = req.getParameter("fee");
 	 String preparation = req.getParameter("preparation");
 	
-	 
-	 
-   //한글
-//	 resp.setContentType("text/html;charset=UTF-8");
-//     System.out.println("ThirdServlet!!");
-//     System.out.println(name);
-//     System.out.println(fee);
-//     PrintWriter out = resp.getWriter();
-//     out.println("<h1>좋은 하루!<h1>");
-//     out.println(name);
-//     out.close();
 	 System.out.println(name);
+	 System.out.println(endTime);
+	 System.out.println(startTime);
+	 System.out.println(month);
+	 System.out.println(address);
+	 System.out.println(description);
+	 System.out.println(preparation);
+	 System.out.println(fee);
 	 
  }
 }
