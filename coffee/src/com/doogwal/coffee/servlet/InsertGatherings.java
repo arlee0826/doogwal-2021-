@@ -55,8 +55,8 @@ import com.doogwal.coffee.vo.District;
 	 
 	 String[] addressToken = address.split(" ");
 	 System.out.println(addressToken[1]);
-	 
-	 District districtNo = DistrictsDAO.selectOne(addressToken[1]);
+	 String addressNono = addressToken[1];
+	 District districtNo = DistrictsDAO.selectOne(addressNono);
 	 int no = districtNo.getNo();
 	 System.out.println(no);
 		
