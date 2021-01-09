@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>font awesome ¾ÆÀÌÄÜ »ç¿ë</title>
+    <title>font awesome ì•„ì´ì½˜ ì‚¬ìš©</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/default.css" />
@@ -32,7 +32,7 @@
             text-align: center;
             margin: 30px 0;
         }
-        .first_td{ /*°¢ ¿­ÀÇ Ã¹¹øÂ° Çà*/
+        .first_td{ /*ê° ì—´ì˜ ì²«ë²ˆì§¸ í–‰*/
             width: 200px;
             height: 100px;
             font-size: 30px;
@@ -41,13 +41,13 @@
             line-height: 100px;
             background-color: #dcdcdc;
         }
-        .second_td{/*µÎ¹ø Â° td*/
+        .second_td{/*ë‘ë²ˆ ì§¸ td*/
             width: 850px;
             padding-left: 60px;
             border-bottom: 1px solid #bebebe;
             vertical-align: middle;
         }
-        .input_style1{ /*<input> ¸ğÀÓÀÌ¸§,Àå¼Ò,È¸ºñ,ÁØºñ¹° */
+        .input_style1{ /*<input> ëª¨ì„ì´ë¦„,ì¥ì†Œ,íšŒë¹„,ì¤€ë¹„ë¬¼ */
             width: 230px;
             height: 14px;
             margin-right: 10px;
@@ -55,35 +55,35 @@
             /*box-sizing: border-box;*/
             padding: 8px 10px;
         }
-        .detail_input textarea,.add_box_input,.input_style1:focus{/*<input> Æ÷Ä¿½º½Ã º¸´õ*/
+        .detail_input textarea,.add_box_input,.input_style1:focus{/*<input> í¬ì»¤ìŠ¤ì‹œ ë³´ë”*/
             outline-color: #ff6333;
         }
-        .input_time{ /*<input> ½Ã°£  */
+        .input_time{ /*<input> ì‹œê°„  */
             width: 150px;
             height: 30px;
             vertical-align: middle;
         }
-        .date_input{ /*<input> ³¯ÀÚ */
+        .date_input{ /*<input> ë‚ ì */
             height: 30px;
             width: 150px;
             margin-right: 30px;
         }
-        .local_input input{/*ÁÖ¼Ò, »óÁ¦ÁÖ¼Ò*/
+        .local_input input{/*ì£¼ì†Œ, ìƒì œì£¼ì†Œ*/
             display: block;
             margin-top: 6px;
         }
-        .counting_characters{/*±ÛÀÚ ¼ö Ä«¿îÆ¼ ±Û*/
+        .counting_characters{/*ê¸€ì ìˆ˜ ì¹´ìš´í‹° ê¸€*/
             font-size: 20px;
             vertical-align: bottom;
         }
-        .detail_input textarea{/*±ÛÀÚ ¼ö Ä«¿îÆ¼ ±Û*/
+        .detail_input textarea{/*ê¸€ì ìˆ˜ ì¹´ìš´í‹° ê¸€*/
             width: 250px;
             height: 60px;
             vertical-align: middle;
             resize: none;
             margin-right: 10px;
         }
-        .create_end_btn{/*<button>¸ğÀÓ ¸¸µé±â*/
+        .create_end_btn{/*<button>ëª¨ì„ ë§Œë“¤ê¸°*/
             width: 200px;
             height: 50px;
             background-color: rgb(255, 91, 51);
@@ -97,11 +97,11 @@
             left: 50%;
             margin-left: -100px;
         }
-        .create_end_btn:hover{/*¹öÆ° ¿À¹ö½Ã*/
+        .create_end_btn:hover{/*ë²„íŠ¼ ì˜¤ë²„ì‹œ*/
             box-shadow: 0 2px 5px 0 rgb(255, 91, 51), 0 2px 10px 0 rgb(255, 91, 51);
             cursor: pointer;
         }
-        .local_map{/*Áöµµ °ø°£*/
+        .local_map{/*ì§€ë„ ê³µê°„*/
             background-color: #bebebe;
             width: 431px;
             height: 303px;
@@ -109,11 +109,11 @@
             left: 60%;
             top: 402px;
         }
-        .check_date,.span_one{/*<checkbox> ÇÏ·çÁ¾ÀÏ, '¿ø'*/
+        .check_date,.span_one{/*<checkbox> í•˜ë£¨ì¢…ì¼, 'ì›'*/
             vertical-align: bottom;
             font-size: 20px;
         }
-        .each_preparation{/*ÁØºñ¹° Ãß°¡µÈ ¹Ú½º*/
+        .each_preparation{/*ì¤€ë¹„ë¬¼ ì¶”ê°€ëœ ë°•ìŠ¤*/
             width: 210px;
             height: 30px;
             background-color: #FFAB40;
@@ -127,27 +127,27 @@
             float: left;
             border: 1px solid #FF9100;
         }
-        .each_preparation:nth-child(2){/*ÁØºñ¹° ¹Ú½º¸¶´Ù °£°İ*/
+        .each_preparation:nth-child(2){/*ì¤€ë¹„ë¬¼ ë°•ìŠ¤ë§ˆë‹¤ ê°„ê²©*/
             margin-left: 4px;
         }
-        .each_preparation a{/*ÁØºñ¹° Ãß°¡µÈ ¹Ú½º¾È¿¡ ÀÖ´Â 'x'*/
+        .each_preparation a{/*ì¤€ë¹„ë¬¼ ì¶”ê°€ëœ ë°•ìŠ¤ì•ˆì— ìˆëŠ” 'x'*/
             margin-left: 10px;
         }
-        .each_preparation a:hover{/*ÁØºñ¹° Ãß°¡µÈ ¹Ú½º ¿À¹ö½Ã*/
+        .each_preparation a:hover{/*ì¤€ë¹„ë¬¼ ì¶”ê°€ëœ ë°•ìŠ¤ ì˜¤ë²„ì‹œ*/
             cursor: pointer;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         }
-        .preparation_box{/*°¢ ÁØºñ¹° ¹Ú½º¸¦ ´ã´Â ºÎ¸ğ*/
+        .preparation_box{/*ê° ì¤€ë¹„ë¬¼ ë°•ìŠ¤ë¥¼ ë‹´ëŠ” ë¶€ëª¨*/
             float: right;
             width: 431px;
         }
-        .add_box_input{/*ÁØºñ¹° input*/
+        .add_box_input{/*ì¤€ë¹„ë¬¼ input*/
             width: 180px;
             height: 14px;
             float: left;
             padding: 8px 10px;
         }
-        .add_btn{ /*ÁØºñ¹° input ¿· 'Ãß°¡' ¹öÆ°*/
+        .add_btn{ /*ì¤€ë¹„ë¬¼ input ì˜† 'ì¶”ê°€' ë²„íŠ¼*/
             display: inline-block;
             width: 50px;
             height: 34px;
@@ -162,14 +162,14 @@
             border-top-right-radius: 8px;
             margin-left: -1px;
         }
-        .add_btn:hover{ /*ÁØºñ¹° input ¿· 'Ãß°¡' ¹öÆ° ¿À¹ö½Ã*/
+        .add_btn:hover{ /*ì¤€ë¹„ë¬¼ input ì˜† 'ì¶”ê°€' ë²„íŠ¼ ì˜¤ë²„ì‹œ*/
             cursor: pointer;
             box-shadow:1px 1px 1px 1px #999;
         }
-        .not_required{/*Áöµµ¿¡¼­ ÇÊ¿ä¾ø´Â °Íµé*/
+        .not_required{/*ì§€ë„ì—ì„œ í•„ìš”ì—†ëŠ” ê²ƒë“¤*/
             display: none;
         }
-        .my_address_label{ /*<input>ÁÖ¼Ò ¶óº§ */
+        .my_address_label{ /*<input>ì£¼ì†Œ ë¼ë²¨ */
             display: inline-block;
             width: 390px;
             height: 40px;
@@ -179,7 +179,7 @@
             text-align: center;
             line-height: 40px;
         }
-        .my_address_label:hover{ /*<input>ÁÖ¼Ò ¶óº§ ¿À¹ö½Ã */
+        .my_address_label:hover{ /*<input>ì£¼ì†Œ ë¼ë²¨ ì˜¤ë²„ì‹œ */
             cursor: pointer;
             box-shadow:1px 1px 1px 1px #999;
         }
@@ -192,8 +192,8 @@
             <img src="img/logo.png" alt="saemo logo" title="saemo logo" />
             <form class="header_search"><!--header_search-->
                 <fieldset><!--fieldset-->
-                    <legend class="screen_out">°Ë»ö</legend>
-                    <input placeholder="°Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä." maxlength="10" />
+                    <legend class="screen_out">ê²€ìƒ‰</legend>
+                    <input placeholder="ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”." maxlength="10" />
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </fieldset><!--//header_search-->
             </form><!--//#form -->
@@ -209,10 +209,10 @@
             <div class="header_meeting_home"><a href=""><i class="far fa-handshake"></i></a></div>
             <div class="header_status"><a href=""><i class="fas fa-user-circle"></i></a></div>
             <div class="header_status_dropbox">
-                <h3 class="screen_out">³»¸Ş´º</h3>
+                <h3 class="screen_out">ë‚´ë©”ë‰´</h3>
                 <ul>
-                    <li><a href="">¸¶ÀÌÆäÀÌÁö</a></li>
-                    <li><a href="">·Î±×¾Æ¿ô</a></li>
+                    <li><a href="">ë§ˆì´í˜ì´ì§€</a></li>
+                    <li><a href="">ë¡œê·¸ì•„ì›ƒ</a></li>
                 </ul>
             </div>
         </div><!--//header_right end-->
@@ -223,65 +223,65 @@
     <!-- content -->
     <div id="content">
 
-        <form action="/gatheringRegister.coffee" method="GET">
-            <div class="form_title"><h1>¸ğÀÓ °³¼³ÇÏ±â</h1></div>
+        <form action="/gatheringRegister.coffee" method="POST">
+            <div class="form_title"><h1>ëª¨ì„ ê°œì„¤í•˜ê¸°</h1></div>
             <table>
                 <tr>
-                    <td class="first_td">¸ğÀÓ ÀÌ¸§</td>
+                    <td class="first_td">ëª¨ì„ ì´ë¦„</td>
                     <td class="second_td">
                         <input type="text" maxlength="10" class="input_style1 v1" id="nameGathering" name="name" >
-                        <span class="counting_characters v1_v">(0/10ÀÚ)</span>
+                        <span class="counting_characters v1_v">(0/10ì)</span>
                     </td>
                 </tr>
                 <tr>
-                    <td class="first_td">³¯Â¥</td>
+                    <td class="first_td">ë‚ ì§œ</td>
                     <td class="second_td">
                         <input type="date" class="date_input" id="date" name="date">
                         <input type="time" class="input_time" id="startTime" name="startTime">
                         <span class="">~</span>
                         <input type="time" class="input_time" id="endTime" name="endTime">
-                        <label class="check_date"><input type="checkbox" class="checkbox_date" name="allDay">ÇÏ·çÁ¾ÀÏ</label>
+                        <label class="check_date"><input type="checkbox" class="checkbox_date" name="allDay">í•˜ë£¨ì¢…ì¼</label>
                     </td>
                 </tr>
                 <tr class="local_input">
-                    <td class="first_td">Àå¼Ò</td>
+                    <td class="first_td">ì¥ì†Œ</td>
                     <td class="second_td">
                         <div class="not_required">
-                            <input type="text" id="sample5_address" placeholder="ÁÖ¼Ò">
-                            <input id="address_content" type="button" onclick="sample5_execDaumPostcode()" value="ÁÖ¼Ò °Ë»ö"><br>
+                            <input type="text" id="sample5_address" placeholder="ì£¼ì†Œ">
+                            <input id="address_content" type="button" onclick="sample5_execDaumPostcode()" value="ì£¼ì†Œ ê²€ìƒ‰"><br>
                             <input type="hidden" id="address_hidden" name="address">
                             <input type="hidden" id="location_hidden" name="location">
                         </div>
-                        <label for="address_content" class="my_address_label" id="addressContent">ÁÖ¼Ò Ã£±â</label>
+                        <label for="address_content" class="my_address_label" id="addressContent">ì£¼ì†Œ ì°¾ê¸°</label>
                     </td>
                 </tr>
                 <tr class="detail_input">
-                    <td class="first_td">»ó¼¼</td>
+                    <td class="first_td">ìƒì„¸</td>
                     <td class="second_td">
                         <textarea maxlength="100" class="v2" id="meetingDetail" name="description"></textarea>
-                        <span class="counting_characters v2_v">(0/100ÀÚ)</span>
+                        <span class="counting_characters v2_v">(0/100ì)</span>
                     </td>
                 </tr>
                 <tr>
-                    <td class="first_td">È¸ºñ</td>
+                    <td class="first_td">íšŒë¹„</td>
                     <td class="second_td">
                         <input type="number" class="input_style1" value="0" id="fee" name="fee">
-                        <span class="span_one">¿ø</span>
+                        <span class="span_one">ì›</span>
                     </td>
                 </tr>
                 <tr>
-                    <td class="first_td">ÁØºñ¹°</td>
+                    <td class="first_td">ì¤€ë¹„ë¬¼</td>
                     <td class="second_td">
-                        <input placeholder="ÃÖ´ë 2°³" maxlength="10" class="add_box_input v3">
-                        <a class="add_btn">Ãß°¡</a>
-                        <span class="counting_characters v3_v">(0/10ÀÚ)</span>
+                        <input placeholder="ìµœëŒ€ 2ê°œ" maxlength="10" class="add_box_input v3">
+                        <a class="add_btn">ì¶”ê°€</a>
+                        <span class="counting_characters v3_v">(0/10ì)</span>
                         <div class="preparation_box"></div>
                         <input type="hidden" name="preparation" id="preparation">
                     </td>
                 </tr>
                 <div id="map" class="local_map"></div>
             </table>
-            <input type="button"  class="create_end_btn" value="¸ğÀÓ¸¸µé±â">
+            <input type="button"  class="create_end_btn" value="ëª¨ì„ë§Œë“¤ê¸°">
         </form>
     </div>
     <!-- //content -->
@@ -290,19 +290,19 @@
 <div id="footer"><!--//footer start-->
     <div class="inner"><!--//inner start-->
         <ul class="footer_container_help"><!--// footer_conatiner_left start-->
-            <li><a href="">ÀÌ¿ë¾à°ü</a></li>
+            <li><a href="">ì´ìš©ì•½ê´€</a></li>
             <li><a href="">FAQ</a></li>
-            <li><a href="">È¸»ç¼Ò°³</a></li>
+            <li><a href="">íšŒì‚¬ì†Œê°œ</a></li>
         </ul><!--// footer_conatiner_left end-->
         <div class="footer_container_company_name clear_fix">
-            <span> &copy; µÎ°ı</span>
+            <span> &copy; ë‘ê´„</span>
         </div><!--// footer_conatiner_start end-->
         <dl>
             <dt>
-                <address class="footer_address">ÁÖ¼Ò : ¼­¿ïÆ¯º°½Ã °ü¾Ç±¸ ºÀÃµ·Î 72-6 7Ãş</address>
+                <address class="footer_address">ì£¼ì†Œ : ì„œìš¸íŠ¹ë³„ì‹œ ê´€ì•…êµ¬ ë´‰ì²œë¡œ 72-6 7ì¸µ</address>
             </dt>
             <dt>
-                <div class="footer_phone_num">ÀüÈ­¹øÈ£ : 02-123-1234</div>
+                <div class="footer_phone_num">ì „í™”ë²ˆí˜¸ : 02-123-1234</div>
             </dt>
         </dl>
 
@@ -313,74 +313,74 @@
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9461990ea008279ad054cf44109aa103&libraries=services"></script>
 <script src="js/jquery.js"></script>
 <script>
-    //textarea ³»¿¡ ±ÛÀÚ¼ö ¼¼±â
+    //textarea ë‚´ì— ê¸€ììˆ˜ ì„¸ê¸°
     $('.v1').keyup(function (e) {
 
         let val = $('.v1').val();
         val = val.substr(0, 10);
         $('.v1').val(val);
-        $('.v1_v').text("(" + val.length + " / 10ÀÚ)");
+        $('.v1_v').text("(" + val.length + " / 10ì)");
     });
     $('.v2').keyup(function (e) {
 
         let val = $('.v2').val();
         val = val.substr(0, 100);
         $('.v2').val(val);
-        $('.v2_v').text("(" + val.length + " / 100ÀÚ)");
+        $('.v2_v').text("(" + val.length + " / 100ì)");
     });
     $('.v3').keyup(function (e) {
         let val = $('.v3').val();
         val = val.substr(0, 10);
         $('.v3').val(val);
-        $('.v3_v').text("(" + val.length + " / 10ÀÚ)");
+        $('.v3_v').text("(" + val.length + " / 10ì)");
         if (e.keyCode == 13) {
             createbox();
         }
     });
-    //end textarea ³»¿¡ ±ÛÀÚ¼ö ¼¼±â
-    //--------------------------------------------------------------------------------ÁÖ¼Ò Ã£±â . Áöµµ º¸ÀÌ±â
-    var mapContainer = document.getElementById('map'), // Áöµµ¸¦ Ç¥½ÃÇÒ div
+    //end textarea ë‚´ì— ê¸€ììˆ˜ ì„¸ê¸°
+    //--------------------------------------------------------------------------------ì£¼ì†Œ ì°¾ê¸° . ì§€ë„ ë³´ì´ê¸°
+    var mapContainer = document.getElementById('map'), // ì§€ë„ë¥¼ í‘œì‹œí•  div
         mapOption = {
-            center: new daum.maps.LatLng(37.537187, 127.005476), // ÁöµµÀÇ Áß½ÉÁÂÇ¥
-            level: 5 // ÁöµµÀÇ È®´ë ·¹º§
+            center: new daum.maps.LatLng(37.537187, 127.005476), // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ
+            level: 5 // ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
         };
-    //Áöµµ¸¦ ¹Ì¸® »ı¼º
+    //ì§€ë„ë¥¼ ë¯¸ë¦¬ ìƒì„±
     var map = new daum.maps.Map(mapContainer, mapOption);
-    //ÁÖ¼Ò-ÁÂÇ¥ º¯È¯ °´Ã¼¸¦ »ı¼º
+    //ì£¼ì†Œ-ì¢Œí‘œ ë³€í™˜ ê°ì²´ë¥¼ ìƒì„±
     var geocoder = new daum.maps.services.Geocoder();
-    //¸¶Ä¿¸¦ ¹Ì¸® »ı¼º
+    //ë§ˆì»¤ë¥¼ ë¯¸ë¦¬ ìƒì„±
     var marker = new daum.maps.Marker({
         position: new daum.maps.LatLng(37.537187, 127.005476),
         map: map
     });
-    let mapnum = 0;  //À¯È¿¼º °Ë»ç µ¥ÀÌÅÍ
+    let mapnum = 0;  //ìœ íš¨ì„± ê²€ì‚¬ ë°ì´í„°
     function sample5_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
-                var addr = data.address; // ÃÖÁ¾ ÁÖ¼Ò º¯¼ö
+                var addr = data.address; // ìµœì¢… ì£¼ì†Œ ë³€ìˆ˜
 
-                // ÁÖ¼Ò Á¤º¸¸¦ ÇØ´ç ÇÊµå¿¡ ³Ö´Â´Ù.
+                // ì£¼ì†Œ ì •ë³´ë¥¼ í•´ë‹¹ í•„ë“œì— ë„£ëŠ”ë‹¤.
                 document.getElementById("sample5_address").value = addr;
-                //---------------------------------------------------------------------ÁÖ¼Ò ¿ìÈ¸
+                //---------------------------------------------------------------------ì£¼ì†Œ ìš°íšŒ
                 document.getElementById("address_hidden").value = addr;
                 document.getElementById("addressContent").innerHTML = addr;
-                // ÁÖ¼Ò·Î »ó¼¼ Á¤º¸¸¦ °Ë»ö
+                // ì£¼ì†Œë¡œ ìƒì„¸ ì •ë³´ë¥¼ ê²€ìƒ‰
                 geocoder.addressSearch(data.address, function(results, status) {
-                    // Á¤»óÀûÀ¸·Î °Ë»öÀÌ ¿Ï·áµÆÀ¸¸é
+                    // ì •ìƒì ìœ¼ë¡œ ê²€ìƒ‰ì´ ì™„ë£Œëìœ¼ë©´
                     if (status === daum.maps.services.Status.OK) {
 
-                        var result = results[0]; //Ã¹¹øÂ° °á°úÀÇ °ªÀ» È°¿ë
-                        // -------------------------------------------------------------------ÇØ´ç ÁÖ¼Ò¿¡ ´ëÇÑ ÁÂÇ¥¸¦ ¹Ş¾Æ¼­
+                        var result = results[0]; //ì²«ë²ˆì§¸ ê²°ê³¼ì˜ ê°’ì„ í™œìš©
+                        // -------------------------------------------------------------------í•´ë‹¹ ì£¼ì†Œì— ëŒ€í•œ ì¢Œí‘œë¥¼ ë°›ì•„ì„œ
                         var coords = new daum.maps.LatLng(result.y, result.x);
                         // alert(coords);
-                        // Áöµµ¸¦ º¸¿©ÁØ´Ù.
+                        // ì§€ë„ë¥¼ ë³´ì—¬ì¤€ë‹¤.
                         mapContainer.style.display = "block";
                         map.relayout();
-                        // Áöµµ Áß½ÉÀ» º¯°æÇÑ´Ù.
+                        // ì§€ë„ ì¤‘ì‹¬ì„ ë³€ê²½í•œë‹¤.
                         map.setCenter(coords);
-                        // ¸¶Ä¿¸¦ °á°ú°ªÀ¸·Î ¹ŞÀº À§Ä¡·Î ¿Å±ä´Ù.
+                        // ë§ˆì»¤ë¥¼ ê²°ê³¼ê°’ìœ¼ë¡œ ë°›ì€ ìœ„ì¹˜ë¡œ ì˜®ê¸´ë‹¤.
                         marker.setPosition(coords)
-                        // alert(coords);//-----------------------------------------------------ÁÖ¼Ò Áß¿ä
+                        // alert(coords);//-----------------------------------------------------ì£¼ì†Œ ì¤‘ìš”
                         mapnum++
                         document.getElementById("location_hidden").value = coords;
                     }
@@ -388,8 +388,8 @@
             }
         }).open();
     }
-    //end ÁÖ¼Ò Ã£±â . Áöµµ º¸ÀÌ±â
-    //--------------------------------------------------ÁØºñ¹° Ãß°¡
+    //end ì£¼ì†Œ ì°¾ê¸° . ì§€ë„ ë³´ì´ê¸°
+    //--------------------------------------------------ì¤€ë¹„ë¬¼ ì¶”ê°€
 
     $(".add_btn").click(createbox);
     let countnumber = 0;
@@ -400,7 +400,7 @@
         const $span = $("<span class='eq_num'>").text(value);
         $("<div class='each_preparation'>").append($span,$a)
             .appendTo(".preparation_box");
-        $('.v3_v').text("(0/10ÀÚ)");
+        $('.v3_v').text("(0/10ì)");
         countnumber++;
         if(countnumber==2){
             $(".add_box_input").attr("disabled",true);
@@ -409,13 +409,13 @@
             $('.v3_v').text("");
         }
     }
-    $(document).on("click",".delete_btn",function () {//µ¿ÀûÀ¸·Î Ãß°¡µÈ °ÍÀº ÀÌ·¸°Ô º¯°æÇØ¾ß ÀÌº¥Æ® Àû¿ëµÊ
+    $(document).on("click",".delete_btn",function () {//ë™ì ìœ¼ë¡œ ì¶”ê°€ëœ ê²ƒì€ ì´ë ‡ê²Œ ë³€ê²½í•´ì•¼ ì´ë²¤íŠ¸ ì ìš©ë¨
         $(this).parent().remove();
         countnumber--;
         $(".add_box_input").attr("disabled",false);
         $(".add_btn").css({"pointer-events":"auto",
             "background-color":"#FF9100"});
-        $('.v3_v').text("(0/10ÀÚ)");
+        $('.v3_v').text("(0/10ì)");
     });
 
     $(".checkbox_date").click(function () {
@@ -429,30 +429,30 @@
     $(".create_end_btn").click(function () {
 
         if ($("#nameGathering").val() === "") {
-            alert("¸ğÀÓ ÀÌ¸§À» ÀÛ¼ºÇØÁÖ¼¼¿ä");
+            alert("ëª¨ì„ ì´ë¦„ì„ ì‘ì„±í•´ì£¼ì„¸ìš”");
             return false;
-        }//¸ğÀÓÀÌ¸§
+        }//ëª¨ì„ì´ë¦„
 
         if ($(".date_input").val()===""){
-         alert("³¯Â¥¸¦ Á¤ÇØÁÖ¼¼¿ä.");
+         alert("ë‚ ì§œë¥¼ ì •í•´ì£¼ì„¸ìš”.");
             return false;
         }
         if
         (($("input:checkbox[name=allDay]:checked").length<1) && (($("#startTime").val()==="")||($("#endTime").val()==="")))
         {
-            alert("³¯Â¥¿¡¼­ ½Ã°£À» ¼³Á¤ÇØÁÖ¼¼¿ä.");
+            alert("ë‚ ì§œì—ì„œ ì‹œê°„ì„ ì„¤ì •í•´ì£¼ì„¸ìš”.");
             return false;
         }
         if(mapnum<1){
-            alert("Àå¼Ò¸¦ ¼±ÅÃÇÏ¼¼¿ä");
+            alert("ì¥ì†Œë¥¼ ì„ íƒí•˜ì„¸ìš”");
             return false;
         }
        if($("#meetingDetail").val() ===""){
-            alert("»ó¼¼³»¿ëÀ» Àû¾îÁÖ¼¼¿ä");
+            alert("ìƒì„¸ë‚´ìš©ì„ ì ì–´ì£¼ì„¸ìš”");
            return false;
         }
         if($("#fee").val() ===""){
-            alert("È¸ºñ¸¦ Àû¾îÁÖ¼¼¿ä!");
+            alert("íšŒë¹„ë¥¼ ì ì–´ì£¼ì„¸ìš”!");
             return false;
         }
       else {   

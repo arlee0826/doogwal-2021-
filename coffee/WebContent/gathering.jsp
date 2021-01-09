@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>font awesome ¾ÆÀÌÄÜ »ç¿ë</title>
+    <title>font awesome ì•„ì´ì½˜ ì‚¬ìš©</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/default.css" />
@@ -25,12 +25,12 @@
             width: 1080px;
             margin: auto;
         }
-        .form_title{ /*"¸ğÀÓ °³¼³ÇÏ±â*/
+        .form_title{ /*"ëª¨ì„ ê°œì„¤í•˜ê¸°*/
             font-size: 40px;
             text-align: center;
             margin: 30px 0;
         }
-        .first_td{ /*°¢ ¿­ÀÇ Ã¹¹øÂ° Çà*/
+        .first_td{ /*ê° ì—´ì˜ ì²«ë²ˆì§¸ í–‰*/
             width: 200px;
             height: 100px;
             font-size: 30px;
@@ -40,27 +40,27 @@
             color: white;
             border-bottom: 1px solid #bebebe;
         }
-        .second_td{/*µÎ¹ø Â° td*/
+        .second_td{/*ë‘ë²ˆ ì§¸ td*/
             width: 850px;
             padding-left: 60px;
             border:1px solid #bebebe;
             vertical-align: middle;
         }
-        .input_time{ /*<input> ½Ã°£  */
+        .input_time{ /*<input> ì‹œê°„  */
             width: 150px;
             height: 30px;
             vertical-align: middle;
         }
-        .date_input{ /*<input> ³¯ÀÚ */
+        .date_input{ /*<input> ë‚ ì */
             height: 30px;
             width: 150px;
             margin-right: 30px;
         }
-        .local_input input{/*ÁÖ¼Ò, »óÁ¦ÁÖ¼Ò*/
+        .local_input input{/*ì£¼ì†Œ, ìƒì œì£¼ì†Œ*/
             display: block;
             margin-top: 6px;
         }
-        .local_map{/*Áöµµ °ø°£*/
+        .local_map{/*ì§€ë„ ê³µê°„*/
             background-color: #bebebe;
             width: 431px;
             height: 303px;
@@ -68,37 +68,37 @@
             left: 60%;
             top: 402px;
         }
-        .check_date{/*<checkbox> ÇÏ·çÁ¾ÀÏ, '¿ø'*/
+        .check_date{/*<checkbox> í•˜ë£¨ì¢…ì¼, 'ì›'*/
             vertical-align: bottom;
             font-size: 20px;
         }
         /*------------------------------------------12-19*/
-        .meet_name{/* <p>¸ğÀÓ ÀÌ¸§*/
+        .meet_name{/* <p>ëª¨ì„ ì´ë¦„*/
             font-size: 40px;
             font-weight: 900;
         }
-        .meet_content{ /* <p>¸ğÀÓ »ó¼¼*/
+        .meet_content{ /* <p>ëª¨ì„ ìƒì„¸*/
             width: 340px;
             height: 90px;
             font-size: 18px;
             line-height: 24px;
         }
-        .dues{ /* <p>°¡°İ(1234¿ø) */
+        .dues{ /* <p>ê°€ê²©(1234ì›) */
             font-size: 20px;
         }
-        .materials_item{ /* <p> °¢ ÁØºñ¹° */
+        .materials_item{ /* <p> ê° ì¤€ë¹„ë¬¼ */
             font-size: 20px;
             margin: 10px 0;
         }
-        /*-----------------------------12-20Âü¼®¿©ºÎ box*/
-        .attendance_status_box{ /* Âü¼®¿©ºÎ °ø°£ */
+        /*-----------------------------12-20ì°¸ì„ì—¬ë¶€ box*/
+        .attendance_status_box{ /* ì°¸ì„ì—¬ë¶€ ê³µê°„ */
             width: 1078px;
             height: 440px;
             border: 1px solid rgb(190, 190, 190);
             border-top: none;
             position: relative;
         }
-        .attend_box{ /* Âü¼® °ø°£ */
+        .attend_box{ /* ì°¸ì„ ê³µê°„ */
             width: 538px;
             height: 440px;
             float: left;
@@ -106,12 +106,12 @@
             /*background-color: #bebebe;*/
             padding-top: 30px;
             padding-left: 30px;
-            box-sizing: border-box; /*paddingÀ» ÁÖ¸é div°¡ Ä¿Áø´Ù ÀÌ ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇØ¼­ ³ÖÀ½*/
+            box-sizing: border-box; /*paddingì„ ì£¼ë©´ divê°€ ì»¤ì§„ë‹¤ ì´ ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•´ì„œ ë„£ìŒ*/
         }
-        .attend_btn:hover{ /* Âü¼® ¹öÆ° ¿À¹ö½Ã */
+        .attend_btn:hover{ /* ì°¸ì„ ë²„íŠ¼ ì˜¤ë²„ì‹œ */
             cursor: pointer;
         }
-        .attend_title,.no_attend_title{/* Âü¼®,ºÒÂü ¹öÆ° */
+        .attend_title,.no_attend_title{/* ì°¸ì„,ë¶ˆì°¸ ë²„íŠ¼ */
             width: 100px;
             height: 100px;
             background-color: #bebebe;
@@ -124,22 +124,22 @@
             display: inline-block;
             margin-bottom: 30px;
         }
-        .attend_box input[type="radio"]{/* Âü¼® ¹öÆ°¿¡¼­ radio ¾Èº¸ÀÌ°Ô µÎ±â*/
+        .attend_box input[type="radio"]{/* ì°¸ì„ ë²„íŠ¼ì—ì„œ radio ì•ˆë³´ì´ê²Œ ë‘ê¸°*/
             display: none;
         }
-        .attendees,.non_attendees{ /* "X¸í" */
+        .attendees,.non_attendees{ /* "Xëª…" */
             margin-left: 50px;
             font-size: 30px;
             font-weight: 500;
         }
-        .attend_box ul{ /* ÇÁ·ÎÇÊ »çÁø °ø°£ */
+        .attend_box ul{ /* í”„ë¡œí•„ ì‚¬ì§„ ê³µê°„ */
             width: 478px;
             height: 280px;
             /*background-color: #bebebe;*/
             padding-left: 36px;
-            box-sizing: border-box; /*paddingÀ» ÁÖ¸é div°¡ Ä¿Áø´Ù ÀÌ ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇØ¼­ ³ÖÀ½*/
+            box-sizing: border-box; /*paddingì„ ì£¼ë©´ divê°€ ì»¤ì§„ë‹¤ ì´ ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•´ì„œ ë„£ìŒ*/
         }
-        .attend_box ul:hover{ /* ÇÁ·ÎÇÊ »çÁø °ø°£ ¿À¹ö½Ã ÆîÃÄÁö±â */
+        .attend_box ul:hover{ /* í”„ë¡œí•„ ì‚¬ì§„ ê³µê°„ ì˜¤ë²„ì‹œ í¼ì³ì§€ê¸° */
             width: 890px;
             /*width: 1020px;*/
             padding-left: 0;
@@ -147,10 +147,10 @@
             border-radius: 8px;
             position: absolute;
         }
-        .attend_box ul:hover img{ /* ÇÁ·ÎÇÊ »çÁø °ø°£ ¿À¹ö½Ã ÆîÃÄÁö±â */
+        .attend_box ul:hover img{ /* í”„ë¡œí•„ ì‚¬ì§„ ê³µê°„ ì˜¤ë²„ì‹œ í¼ì³ì§€ê¸° */
             margin-left: 8px;
         }
-        .attendees_img{ /* ÇÁ·ÎÇÊ »çÁø */
+        .attendees_img{ /* í”„ë¡œí•„ ì‚¬ì§„ */
             width: 80px;
             height: 80px;
             border-radius: 50%;
@@ -158,8 +158,8 @@
             margin-left: -36px;
             margin-top: 10px;
         }
-        /*---------------------¹ÌÂü¼® °ø°£-------------------*/
-        .no_attend_box{ /* ¹ÌÂü¼® °ø°£ */
+        /*---------------------ë¯¸ì°¸ì„ ê³µê°„-------------------*/
+        .no_attend_box{ /* ë¯¸ì°¸ì„ ê³µê°„ */
             width: 539px;
             height: 440px;
             float: left;
@@ -167,22 +167,22 @@
             padding-top: 30px;
             padding-left: 30px;
             padding-right: 30px;
-            box-sizing: border-box; /*paddingÀ» ÁÖ¸é div°¡ Ä¿Áø´Ù ÀÌ ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇØ¼­ ³ÖÀ½*/
+            box-sizing: border-box; /*paddingì„ ì£¼ë©´ divê°€ ì»¤ì§„ë‹¤ ì´ ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•´ì„œ ë„£ìŒ*/
         }
-        .no_attend_box input[type="radio"]{/* Âü¼® ¹öÆ°¿¡¼­ radio ¾Èº¸ÀÌ°Ô µÎ±â*/
+        .no_attend_box input[type="radio"]{/* ì°¸ì„ ë²„íŠ¼ì—ì„œ radio ì•ˆë³´ì´ê²Œ ë‘ê¸°*/
             display: none;
         }
-        .no_attend_btn:hover{ /* ¹ÌÂü¼® ¹öÆ° ¿À¹ö½Ã */
+        .no_attend_btn:hover{ /* ë¯¸ì°¸ì„ ë²„íŠ¼ ì˜¤ë²„ì‹œ */
             cursor: pointer;
         }
-        .no_attend_box ul{ /* ºÒÂü ÇÁ·ÎÇÊ »çÁø °ø°£ */
+        .no_attend_box ul{ /* ë¶ˆì°¸ í”„ë¡œí•„ ì‚¬ì§„ ê³µê°„ */
             width: 478px;
             height: 280px;
             /*background-color: #bebebe;*/
             padding-left: 36px;
-            box-sizing: border-box; /*paddingÀ» ÁÖ¸é div°¡ Ä¿Áø´Ù ÀÌ ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇØ¼­ ³ÖÀ½*/
+            box-sizing: border-box; /*paddingì„ ì£¼ë©´ divê°€ ì»¤ì§„ë‹¤ ì´ ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•´ì„œ ë„£ìŒ*/
         }
-        .no_attend_box ul:hover{ /* ÇÁ·ÎÇÊ »çÁø °ø°£ ¿À¹ö½Ã Æî ÃÄÁö±â */
+        .no_attend_box ul:hover{ /* í”„ë¡œí•„ ì‚¬ì§„ ê³µê°„ ì˜¤ë²„ì‹œ í¼ ì³ì§€ê¸° */
             width: 890px;
             /*width: 1020px;*/
             padding-left: 0;
@@ -190,25 +190,25 @@
             border-radius: 8px;
             float: right;
         }
-        .no_attend_box ul:hover img{ /* ÇÁ·ÎÇÊ »çÁø °ø°£ ¿À¹ö½Ã ÆîÃÄÁö±â */
+        .no_attend_box ul:hover img{ /* í”„ë¡œí•„ ì‚¬ì§„ ê³µê°„ ì˜¤ë²„ì‹œ í¼ì³ì§€ê¸° */
             margin-left: 8px;
         }
-        .attend_btn input[type="radio"]:checked+.attend_title{/*Âü¼®¿©ºÎ¿¡ µû¸¥ ¹öÆ° »ö*/
+        .attend_btn input[type="radio"]:checked+.attend_title{/*ì°¸ì„ì—¬ë¶€ì— ë”°ë¥¸ ë²„íŠ¼ ìƒ‰*/
             background-color: #3EB39D;
         }
-        .no_attend_btn input[type="radio"]:checked+.no_attend_title{/*Âü¼®¿©ºÎ¿¡ µû¸¥ ¹öÆ° »ö*/
+        .no_attend_btn input[type="radio"]:checked+.no_attend_title{/*ì°¸ì„ì—¬ë¶€ì— ë”°ë¥¸ ë²„íŠ¼ ìƒ‰*/
             background-color: #3EB39D;
         }
-        .attendees_img.my_img{/*³ªÀÇ »çÁø °­Á¶*/
+        .attendees_img.my_img{/*ë‚˜ì˜ ì‚¬ì§„ ê°•ì¡°*/
             border: 5px solid #3EB39D;
             width: 70px;
             height: 70px;
         }
         /*    12-24*/
-        .not_required{/*Áöµµ¿¡¼­ ÇÊ¿ä¾ø´Â °Íµé*/
+        .not_required{/*ì§€ë„ì—ì„œ í•„ìš”ì—†ëŠ” ê²ƒë“¤*/
             display: none;
         }
-        .my_address_label{ /*<input>ÁÖ¼Ò ¶óº§ */
+        .my_address_label{ /*<input>ì£¼ì†Œ ë¼ë²¨ */
             display: inline-block;
             width: 350px;
             height: 40px;
@@ -219,11 +219,11 @@
             line-height: 40px;
             pointer-events: none;
         }
-        .my_address_label:hover{ /*<input>ÁÖ¼Ò ¶óº§ ¿À¹ö½Ã */
+        .my_address_label:hover{ /*<input>ì£¼ì†Œ ë¼ë²¨ ì˜¤ë²„ì‹œ */
             cursor: pointer;
             box-shadow:1px 1px 1px 1px #999;
         }
-        .local_map{/*Áöµµ °ø°£*/
+        .local_map{/*ì§€ë„ ê³µê°„*/
             background-color: #bebebe;
             width: 431px;
             height: 303px;
@@ -240,8 +240,8 @@
             <img src="img/logo.png" alt="saemo logo" title="saemo logo" />
             <form class="header_search"><!--header_search-->
                 <fieldset><!--fieldset-->
-                    <legend class="screen_out">°Ë»ö</legend>
-                    <input placeholder="°Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä." maxlength="10" />
+                    <legend class="screen_out">ê²€ìƒ‰</legend>
+                    <input placeholder="ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”." maxlength="10" />
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </fieldset><!--//header_search-->
             </form><!--//#form -->
@@ -257,10 +257,10 @@
             <div class="header_meeting_home"><a href=""><i class="far fa-handshake"></i></a></div>
             <div class="header_status"><a href=""><i class="fas fa-user-circle"></i></a></div>
             <div class="header_status_dropbox">
-                <h3 class="screen_out">³»¸Ş´º</h3>
+                <h3 class="screen_out">ë‚´ë©”ë‰´</h3>
                 <ul>
-                    <li><a href="">¸¶ÀÌÆäÀÌÁö</a></li>
-                    <li><a href="">·Î±×¾Æ¿ô</a></li>
+                    <li><a href="">ë§ˆì´í˜ì´ì§€</a></li>
+                    <li><a href="">ë¡œê·¸ì•„ì›ƒ</a></li>
                 </ul>
             </div>
         </div><!--//header_right end-->
@@ -271,65 +271,65 @@
     <!-- content -->
     <div id="content">
 
-        <div class="form_title"><h1>¸ğÀÓ »ó¼¼</h1></div>
+        <div class="form_title"><h1>ëª¨ì„ ìƒì„¸</h1></div>
         <table>
             <tr>
-                <td class="first_td">¸ğÀÓ ÀÌ¸§</td>
+                <td class="first_td">ëª¨ì„ ì´ë¦„</td>
                 <td class="second_td">
-                    <p class="meet_name">µÎ°ıÁ¶ ¼­¿ï´ë ÀÔ±¸</p>
+                    <p class="meet_name">ë‘ê´„ì¡° ì„œìš¸ëŒ€ ì…êµ¬</p>
                 </td>
             </tr>
             <tr>
-                <td class="first_td">³¯Â¥</td>
+                <td class="first_td">ë‚ ì§œ</td>
                 <td class="second_td">
                     <input type="date" class="date_input" disabled>
                     <input type="time" class="input_time" disabled>
                     <span class="">~</span>
                     <input type="time" class="input_time" disabled>
-                    <label class="check_date"><input type="checkbox" disabled>ÇÏ·çÁ¾ÀÏ</label>
+                    <label class="check_date"><input type="checkbox" disabled>í•˜ë£¨ì¢…ì¼</label>
                 </td>
             </tr>
             <tr class="local_input">
-                <td class="first_td">Àå¼Ò</td>
+                <td class="first_td">ì¥ì†Œ</td>
                 <td class="second_td">
                     <div class="not_required">
-                        <input type="text" id="sample5_address" placeholder="ÁÖ¼Ò">
-                        <input id="address_content" type="button" onclick="sample5_execDaumPostcode()" value="ÁÖ¼Ò °Ë»ö"><br>
+                        <input type="text" id="sample5_address" placeholder="ì£¼ì†Œ">
+                        <input id="address_content" type="button" onclick="sample5_execDaumPostcode()" value="ì£¼ì†Œ ê²€ìƒ‰"><br>
                     </div>
-                    <label for="address_content" class="my_address_label" id="addressContent">ÁÖ¼Ò Ã£±â</label>
+                    <label for="address_content" class="my_address_label" id="addressContent">ì£¼ì†Œ ì°¾ê¸°</label>
                 </td>
             </tr>
             <tr class="detail_input">
-                <td class="first_td">»ó¼¼</td>
+                <td class="first_td">ìƒì„¸</td>
                 <td class="second_td">
                     <p class="meet_content">
-                        ÇÑ±¹¾î ¸ÂÃã¹ı/¹®¹ı °Ë»ç±â´Â ºÎ»ê´ëÇĞ±³ ÀÎ°øÁö´É¿¬±¸½Ç°ú (ÁÖ)³ª¶óÀÎÆ÷Å×Å©°¡ ÇÔ²² ¸¸µé°í ÀÖ½À´Ï´Ù.
-                        ÀÌ °Ë»ç±â´Â °³ÀÎÀÌ³ª
-                        ÇĞ»ı¸¸ ¹«·á·Î »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù. QWERTYASDFFGZ
+                        í•œêµ­ì–´ ë§ì¶¤ë²•/ë¬¸ë²• ê²€ì‚¬ê¸°ëŠ” ë¶€ì‚°ëŒ€í•™êµ ì¸ê³µì§€ëŠ¥ì—°êµ¬ì‹¤ê³¼ (ì£¼)ë‚˜ë¼ì¸í¬í…Œí¬ê°€ í•¨ê»˜ ë§Œë“¤ê³  ìˆìŠµë‹ˆë‹¤.
+                        ì´ ê²€ì‚¬ê¸°ëŠ” ê°œì¸ì´ë‚˜
+                        í•™ìƒë§Œ ë¬´ë£Œë¡œ ì‚¬ìš©í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤. QWERTYASDFFGZ
                     </p>
                 </td>
             </tr>
             <tr>
-                <td class="first_td">È¸ºñ</td>
+                <td class="first_td">íšŒë¹„</td>
                 <td class="second_td">
-                    <p class="dues">11500¿ø</p>
+                    <p class="dues">11500ì›</p>
                 </td>
             </tr>
             <tr>
-                <td class="first_td">ÁØºñ¹°</td>
+                <td class="first_td">ì¤€ë¹„ë¬¼</td>
                 <td class="second_td">
-                    <p class="materials_item"><i class="far fa-check-square"></i>¸¶À½¸¸ °¡Á®¿ÀÁö¸»°í µ·</p>
-                    <p class="materials_item"><i class="far fa-check-square"></i>µ·ÀÌ ÀÖ¾î¾ß Áñ°Ì´Ù. </p>
+                    <p class="materials_item"><i class="far fa-check-square"></i>ë§ˆìŒë§Œ ê°€ì ¸ì˜¤ì§€ë§ê³  ëˆ</p>
+                    <p class="materials_item"><i class="far fa-check-square"></i>ëˆì´ ìˆì–´ì•¼ ì¦ê²ë‹¤. </p>
                 </td>
             </tr>
             <div id="map" class="local_map"></div>
         </table>
-        <!---------------------------------------Âü¼® ºÒÂü¼® °ø°£---------------------------------------->
+        <!---------------------------------------ì°¸ì„ ë¶ˆì°¸ì„ ê³µê°„---------------------------------------->
         <div class="attendance_status_box">
             <div class="attend_box">
                 <label class="attend_btn">
                     <input type="radio" name="attendance_radio" class="attendance_radio">
-                    <div class="attend_title">Âü¼®</div>
+                    <div class="attend_title">ì°¸ì„</div>
                 </label>
                 <span class="attendees"></span>
                 <ul class="attendees_list">
@@ -339,7 +339,7 @@
             <div class="no_attend_box">
                 <label class="no_attend_btn">
                     <input type="radio" name="attendance_radio" class="no_attendance_radio">
-                    <div class="no_attend_title">ºÒÂü</div>
+                    <div class="no_attend_title">ë¶ˆì°¸</div>
                 </label>
                 <span class="non_attendees"></span>
                 <ul class="not_attendees_list">
@@ -354,19 +354,19 @@
 <div id="footer"><!--//footer start-->
     <div class="inner"><!--//inner start-->
         <ul class="footer_container_help"><!--// footer_conatiner_left start-->
-            <li><a href="">ÀÌ¿ë¾à°ü</a></li>
+            <li><a href="">ì´ìš©ì•½ê´€</a></li>
             <li><a href="">FAQ</a></li>
-            <li><a href="">È¸»ç¼Ò°³</a></li>
+            <li><a href="">íšŒì‚¬ì†Œê°œ</a></li>
         </ul><!--// footer_conatiner_left end-->
         <div class="footer_container_company_name clear_fix">
-            <span> &copy; µÎ°ı</span>
+            <span> &copy; ë‘ê´„</span>
         </div><!--// footer_conatiner_start end-->
         <dl>
             <dt>
-                <address class="footer_address">ÁÖ¼Ò : ¼­¿ïÆ¯º°½Ã °ü¾Ç±¸ ºÀÃµ·Î 72-6 7Ãş</address>
+                <address class="footer_address">ì£¼ì†Œ : ì„œìš¸íŠ¹ë³„ì‹œ ê´€ì•…êµ¬ ë´‰ì²œë¡œ 72-6 7ì¸µ</address>
             </dt>
             <dt>
-                <div class="footer_phone_num">ÀüÈ­¹øÈ£ : 02-123-1234</div>
+                <div class="footer_phone_num">ì „í™”ë²ˆí˜¸ : 02-123-1234</div>
             </dt>
         </dl>
 
@@ -377,17 +377,17 @@
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9461990ea008279ad054cf44109aa103&libraries=services"></script>
 <script src="js/jquery.js"></script>
 <script>
-    //--------------------------------------------------------------------------------ÁÖ¼Ò Ã£±â . Áöµµ º¸ÀÌ±â
-    var mapContainer = document.getElementById('map'), // Áöµµ¸¦ Ç¥½ÃÇÒ div
+    //--------------------------------------------------------------------------------ì£¼ì†Œ ì°¾ê¸° . ì§€ë„ ë³´ì´ê¸°
+    var mapContainer = document.getElementById('map'), // ì§€ë„ë¥¼ í‘œì‹œí•  div
         mapOption = {
-            center: new daum.maps.LatLng(37.0013545214342, 127.648247356919), // ÁöµµÀÇ Áß½ÉÁÂÇ¥
-            level: 5 // ÁöµµÀÇ È®´ë ·¹º§
+            center: new daum.maps.LatLng(37.0013545214342, 127.648247356919), // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ
+            level: 5 // ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨
         };
-    //Áöµµ¸¦ ¹Ì¸® »ı¼º
+    //ì§€ë„ë¥¼ ë¯¸ë¦¬ ìƒì„±
     var map = new daum.maps.Map(mapContainer, mapOption);
-    //ÁÖ¼Ò-ÁÂÇ¥ º¯È¯ °´Ã¼¸¦ »ı¼º
+    //ì£¼ì†Œ-ì¢Œí‘œ ë³€í™˜ ê°ì²´ë¥¼ ìƒì„±
     var geocoder = new daum.maps.services.Geocoder();
-    //¸¶Ä¿¸¦ ¹Ì¸® »ı¼º
+    //ë§ˆì»¤ë¥¼ ë¯¸ë¦¬ ìƒì„±
     var marker = new daum.maps.Marker({
         position: new daum.maps.LatLng(37.0013545214342, 127.648247356919),
         map: map
@@ -395,39 +395,39 @@
     function sample5_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
-                var addr = data.address; // ÃÖÁ¾ ÁÖ¼Ò º¯¼ö
-                // ÁÖ¼Ò Á¤º¸¸¦ ÇØ´ç ÇÊµå¿¡ ³Ö´Â´Ù.
+                var addr = data.address; // ìµœì¢… ì£¼ì†Œ ë³€ìˆ˜
+                // ì£¼ì†Œ ì •ë³´ë¥¼ í•´ë‹¹ í•„ë“œì— ë„£ëŠ”ë‹¤.
                 document.getElementById("sample5_address").value = addr;
-                //---------------------------------------------------------------------ÁÖ¼Ò ¿ìÈ¸
+                //---------------------------------------------------------------------ì£¼ì†Œ ìš°íšŒ
                 document.getElementById("addressContent").innerHTML = addr;
-                // ÁÖ¼Ò·Î »ó¼¼ Á¤º¸¸¦ °Ë»ö
+                // ì£¼ì†Œë¡œ ìƒì„¸ ì •ë³´ë¥¼ ê²€ìƒ‰
                 geocoder.addressSearch(data.address, function(results, status) {
-                    // Á¤»óÀûÀ¸·Î °Ë»öÀÌ ¿Ï·áµÆÀ¸¸é
+                    // ì •ìƒì ìœ¼ë¡œ ê²€ìƒ‰ì´ ì™„ë£Œëìœ¼ë©´
                     if (status === daum.maps.services.Status.OK) {
 
-                        var result = results[0]; //Ã¹¹øÂ° °á°úÀÇ °ªÀ» È°¿ë
+                        var result = results[0]; //ì²«ë²ˆì§¸ ê²°ê³¼ì˜ ê°’ì„ í™œìš©
 
-                        // ÇØ´ç ÁÖ¼Ò¿¡ ´ëÇÑ ÁÂÇ¥¸¦ ¹Ş¾Æ¼­
+                        // í•´ë‹¹ ì£¼ì†Œì— ëŒ€í•œ ì¢Œí‘œë¥¼ ë°›ì•„ì„œ
                         var coords = new daum.maps.LatLng(result.y, result.x);
-                        // Áöµµ¸¦ º¸¿©ÁØ´Ù.
+                        // ì§€ë„ë¥¼ ë³´ì—¬ì¤€ë‹¤.
                         mapContainer.style.display = "block";
                         map.relayout();
-                        // Áöµµ Áß½ÉÀ» º¯°æÇÑ´Ù.
+                        // ì§€ë„ ì¤‘ì‹¬ì„ ë³€ê²½í•œë‹¤.
                         map.setCenter(coords);
-                        // ¸¶Ä¿¸¦ °á°ú°ªÀ¸·Î ¹ŞÀº À§Ä¡·Î ¿Å±ä´Ù.
+                        // ë§ˆì»¤ë¥¼ ê²°ê³¼ê°’ìœ¼ë¡œ ë°›ì€ ìœ„ì¹˜ë¡œ ì˜®ê¸´ë‹¤.
                         marker.setPosition(coords)
                     }
                 });
             }
         }).open();
     }
-    //end ÁÖ¼Ò Ã£±â . Áöµµ º¸ÀÌ±â
+    //end ì£¼ì†Œ ì°¾ê¸° . ì§€ë„ ë³´ì´ê¸°
     $.ajax({
-        url:"data/list.json",//¿äÃ»ÇÏ´Â ¼­¹öÁÖ¼Ò
-        type:"GET", //Å¬¶óÀÌ¾ğÆ® -> ¼­¹ö GET, POST
-        dataType:"json", //¼­¹ö->Å¬¶óÀÌ¾ğÆ® µ¥ÀÌÅÍÅ¸ÀÔ
+        url:"data/list.json",//ìš”ì²­í•˜ëŠ” ì„œë²„ì£¼ì†Œ
+        type:"GET", //í´ë¼ì´ì–¸íŠ¸ -> ì„œë²„ GET, POST
+        dataType:"json", //ì„œë²„->í´ë¼ì´ì–¸íŠ¸ ë°ì´í„°íƒ€ì…
         error:function(xhr,code,type) {
-            alert("¼­¹ö Á¡°ËÁß!");
+            alert("ì„œë²„ ì ê²€ì¤‘!");
         },
         success:function(json) {
 
@@ -435,8 +435,8 @@
             const adnumber = list.filter(function (element) {
                 return element.attendance==true;
             });
-            $(".attendees").text(adnumber.length+"¸í");
-            $(".non_attendees").text(list.length-adnumber.length+"¸í");
+            $(".attendees").text(adnumber.length+"ëª…");
+            $(".non_attendees").text(list.length-adnumber.length+"ëª…");
             $(list).each(function () {
                 // if(this.attendance===true){
                 //     const $img = $("<img class='attendees_img'>").attr("src","img/"+this.photo);
@@ -446,7 +446,7 @@
                 //     const $img = $("<img class='attendees_img'>").attr("src","img/"+this.photo);
                 //     $("<li>").append($img).appendTo('.not_attendees_list');
                 // }
-                // if(this.name==="¼ÛÁøÇö"){//ÀÚ±âÀÇ Âü¼®¿©ºÎ
+                // if(this.name==="ì†¡ì§„í˜„"){//ìê¸°ì˜ ì°¸ì„ì—¬ë¶€
                 //     if (this.attendance===true){
                 //         $(".attendance_radio").prop("checked",true);
                 //     }else {
@@ -454,7 +454,7 @@
                 //     }
                 // }
 
-                if(this.name==="¼ÛÁøÇö"){//ÀÚ±âÀÇ Âü¼®¿©ºÎ
+                if(this.name==="ì†¡ì§„í˜„"){//ìê¸°ì˜ ì°¸ì„ì—¬ë¶€
                     if (this.attendance===true){
                         const $img = $("<img class='attendees_img my_img'>").attr("src","img/"+this.photo);
                         $("<li>").append($img).appendTo('.attendees_list');
@@ -464,7 +464,7 @@
                         $("<li>").append($img).appendTo('.not_attendees_list');
                         $(".no_attendance_radio").prop("checked",true);
                     }
-                }//if(this.name==="¼ÛÁøÇö") end
+                }//if(this.name==="ì†¡ì§„í˜„") end
                 else{
                     if(this.attendance===true){
                         const $img = $("<img class='attendees_img'>").attr("src","img/"+this.photo);
@@ -481,19 +481,19 @@
 
 
             });//each() end
-            //---------------------------------------------------------¹öÆ° Å¬¸¯ ½Ã
+            //---------------------------------------------------------ë²„íŠ¼ í´ë¦­ ì‹œ
             $(".no_attend_btn").click(function () {
                 $(list).each(function () {
-                    if(this.name==="¼ÛÁøÇö"){
+                    if(this.name==="ì†¡ì§„í˜„"){
                         this.attendance=false;
                     }
                 })
                 $.ajax({
-                    url: "data/list.json",//¿äÃ»ÇÏ´Â ¼­¹öÁÖ¼Ò
-                    type: "GET", //Å¬¶óÀÌ¾ğÆ® -> ¼­¹ö GET, POST
-                    dataType: "json", //¼­¹ö->Å¬¶óÀÌ¾ğÆ® µ¥ÀÌÅÍÅ¸ÀÔ
+                    url: "data/list.json",//ìš”ì²­í•˜ëŠ” ì„œë²„ì£¼ì†Œ
+                    type: "GET", //í´ë¼ì´ì–¸íŠ¸ -> ì„œë²„ GET, POST
+                    dataType: "json", //ì„œë²„->í´ë¼ì´ì–¸íŠ¸ ë°ì´í„°íƒ€ì…
                     error: function (xhr, code, type) {
-                        alert("¼­¹ö Á¡°ËÁß!");
+                        alert("ì„œë²„ ì ê²€ì¤‘!");
                     },
                     success: function (json) {
 
@@ -501,8 +501,8 @@
                         const adnumber = list.filter(function (element) {
                             return element.attendance == true;
                         });
-                        $(".attendees").text(adnumber.length + "¸í");
-                        $(".non_attendees").text(list.length - adnumber.length + "¸í");
+                        $(".attendees").text(adnumber.length + "ëª…");
+                        $(".non_attendees").text(list.length - adnumber.length + "ëª…");
                         $(".not_attendees_list").empty();
                         $(".attendees_list").empty();
                         $(list).each(function () {
@@ -514,7 +514,7 @@
                                 const $img = $("<img class='attendees_img'>").attr("src", "img/" + this.photo);
                                 $("<li>").append($img).appendTo('.not_attendees_list');
                             }
-                            if (this.name === "¼ÛÁøÇö") {//ÀÚ±âÀÇ Âü¼®¿©ºÎ
+                            if (this.name === "ì†¡ì§„í˜„") {//ìê¸°ì˜ ì°¸ì„ì—¬ë¶€
                                 if (this.attendance === true) {
                                     $(".attendance_radio").prop("checked", true);
                                 } else {
@@ -528,16 +528,16 @@
 
             $(".attend_btn").click(function () {
                 $(list).each(function () {
-                    if(this.name==="¼ÛÁøÇö"){
+                    if(this.name==="ì†¡ì§„í˜„"){
                         this.attendance=true;
                     }
                 })
                 $.ajax({
-                    url: "data/list.json",//¿äÃ»ÇÏ´Â ¼­¹öÁÖ¼Ò
-                    type: "GET", //Å¬¶óÀÌ¾ğÆ® -> ¼­¹ö GET, POST
-                    dataType: "json", //¼­¹ö->Å¬¶óÀÌ¾ğÆ® µ¥ÀÌÅÍÅ¸ÀÔ
+                    url: "data/list.json",//ìš”ì²­í•˜ëŠ” ì„œë²„ì£¼ì†Œ
+                    type: "GET", //í´ë¼ì´ì–¸íŠ¸ -> ì„œë²„ GET, POST
+                    dataType: "json", //ì„œë²„->í´ë¼ì´ì–¸íŠ¸ ë°ì´í„°íƒ€ì…
                     error: function (xhr, code, type) {
-                        alert("¼­¹ö Á¡°ËÁß!");
+                        alert("ì„œë²„ ì ê²€ì¤‘!");
                     },
                     success: function (json) {
 
@@ -547,8 +547,8 @@
                         });
                         $(".not_attendees_list").empty();
                         $(".attendees_list").empty();
-                        $(".attendees").text(adnumber.length + "¸í");
-                        $(".non_attendees").text(list.length - adnumber.length + "¸í");
+                        $(".attendees").text(adnumber.length + "ëª…");
+                        $(".non_attendees").text(list.length - adnumber.length + "ëª…");
                         $(list).each(function () {
                             if (this.attendance === true) {
                                 const $img = $("<img class='attendees_img'>").attr("src", "img/" + this.photo);
@@ -558,7 +558,7 @@
                                 const $img = $("<img class='attendees_img'>").attr("src", "img/" + this.photo);
                                 $("<li>").append($img).appendTo('.not_attendees_list');
                             }
-                            if (this.name === "¼ÛÁøÇö") {//ÀÚ±âÀÇ Âü¼®¿©ºÎ
+                            if (this.name === "ì†¡ì§„í˜„") {//ìê¸°ì˜ ì°¸ì„ì—¬ë¶€
                                 if (this.attendance === true) {
                                     $(".attendance_radio").prop("checked", true);
                                 } else {
@@ -569,7 +569,7 @@
                     }//success() end
                 });//ajax() end
             })//$(".attend_btn").click() end
-            // ---------------------------------------------------------¹öÆ° Å¬¸¯ ½Ã
+            // ---------------------------------------------------------ë²„íŠ¼ í´ë¦­ ì‹œ
         }//success end
     });//$.ajax() end
 
