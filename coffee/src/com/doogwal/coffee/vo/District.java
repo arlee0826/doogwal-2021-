@@ -12,8 +12,9 @@ public class District {
 		this.priorNo = priorNo;
 		this.name = name;
 	}
-
-
+	public District(int no) {
+		this.no = no;
+	}
 	public int getNo() {
 		return no;
 	}

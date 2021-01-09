@@ -7,13 +7,8 @@
 
 
 <insert id="insert" parameterType="Gathering">
-	INSERT ALL
 	INSERT INTO schedules(no,start_date,end_date,name,address,description,lat,lng,regdate,district_no,type,crew_no)
 	VALUES(schedules_seq.nextval,#{startDate},#{endDate},#{name},#{address},#{description},#{lat},#{lng},systimestamp,#{districtNo},#{type},#{crewNo})
-	INSERT INTO gathering(no,fee,regdate)
-	VALUES(schedules_seq,#{fee},systimestamp)
-	INSERT INTO preparations(no,schedule_no,preparation,regdate)
-	VALUES(preparations_seq.nextval,schedules_seq,#(preparation),systimestamp)
 </insert>
 </mapper>  
 

@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.doogwal.coffee.dao.DistrictsDAO;
+import com.doogwal.coffee.vo.District;
+
  @WebServlet("/gatheringRegister.coffee")
  public class InsertGatherings extends HttpServlet{
 
@@ -52,6 +55,10 @@ import javax.servlet.http.HttpServletResponse;
 	 
 	 String[] addressToken = address.split(" ");
 	 System.out.println(addressToken[1]);
-	 System.out.println("1");
+	 
+	 District districtNo = DistrictsDAO.selectOne(addressToken[1]);
+	 int no = districtNo.getNo();
+	 System.out.println(no);
+		
  }
-}
+}		
