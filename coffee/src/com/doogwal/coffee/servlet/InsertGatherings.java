@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  @Override
  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 	 req.setCharacterEncoding("utf-8");  
+	 
 	 String startTime = req.getParameter("startTime");
 	 String endTime = req.getParameter("endTime");
 	 String month = req.getParameter("date");
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 	 String description = req.getParameter("description");
 	 String fee = req.getParameter("fee");
 	 String preparation = req.getParameter("preparation");
+	 String location = req.getParameter("location");
 	
 	 System.out.println(name);
 	 System.out.println(endTime);
@@ -33,5 +35,23 @@ import javax.servlet.http.HttpServletResponse;
 	 System.out.println(preparation);
 	 System.out.println(fee);
 	 
+	 String startDate = (month+" "+startTime); 
+	 String endDate =  (month+" "+endTime);
+	 System.out.println(startDate);
+	 System.out.println(endDate);
+	 
+	 System.out.println(location);
+	 String[] array = location.split(",");
+	 String lat = array[0].substring(1);
+	 System.out.println(lat);
+	 String lngt = array[1];
+	 String lng = lngt.substring(1,lngt.length()-1);
+	 System.out.println(lng);
+	 
+	 String type = "G";
+	 
+	 String[] addressToken = address.split(" ");
+	 System.out.println(addressToken[1]);
+	 System.out.println("1");
  }
 }
