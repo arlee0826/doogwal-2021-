@@ -13,6 +13,22 @@ public class Crew {
 	public Crew() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public Crew(int curPop, int categoryNo, float avgAge, float genderRate, String name, String coverImg,
+			String intro) {
+		super();
+		this.curPop = curPop;
+		this.categoryNo = categoryNo;
+		this.avgAge = avgAge;
+		this.genderRate = genderRate;
+		this.name = name;
+		this.coverImg = coverImg;
+		this.intro = intro;
+	}
+
+
 
 	public Crew(int no, int minAge, int maxAge, int maxPop, int curPop, int categoryNo, int point, float avgAge,
 			float genderRate, String name, String coverImg, String intro) {

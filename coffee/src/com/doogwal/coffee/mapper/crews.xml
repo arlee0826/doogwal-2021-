@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC	
+"-//mybatis.org//DTD Mapper 3.0//EN"	
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="crews">
+<select id="selectList"  resultType="Crew">
+SELECT COVER_IMG coverImg, NAME, INTRO, category_no categoryNo, avg_Age avgAge, CUR_POP curPop, gender_Rate genderRate
+FROM crews
+WHERE sysdate < add_months(regdate,+6) AND CUR_POP<30 AND ROWNUM<9
+ORDER BY CUR_POP DESC;
+</select>
+
+</mapper>
