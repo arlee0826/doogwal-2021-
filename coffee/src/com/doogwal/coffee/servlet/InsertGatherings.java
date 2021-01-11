@@ -1,8 +1,9 @@
 package com.doogwal.coffee.servlet;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +33,8 @@ import com.doogwal.coffee.vo.Gathering;
 	 String feeString = req.getParameter("fee");
 	 String preparation = req.getParameter("preparation");
 	 String location = req.getParameter("location");
-	
+	 String allDay = req.getParameter("allDay");
+	 System.out.println(allDay);
 	 System.out.println(name);
 	 System.out.println(endTime);
 	 System.out.println(startTime);
@@ -44,16 +46,15 @@ import com.doogwal.coffee.vo.Gathering;
 	 int fee = Integer.parseInt(feeString); //회비
 	 System.out.println(fee);
 	 
-	 Date startDate = Date.valueOf(date);  //시작일
-	 Date endDate =  Date.valueOf(date); //종료일
-//	 Date startDate = Date.valueOf(date+" "+startTime);  //시작일
-//	 Date endDate =  Date.valueOf(date+" "+endTime); //종료일
-	 //SimpleDateFormat dt = new SimpleDateFormat("yyyyy-mm-dd hh:mm:ss"); 
-	 //	 Date startDate = dt.parse(date+" "+startTime);  //시작일
-	 //	 Date endDate = dt.parse(date+" "+endTime); //종료일
-	 //	 Date abc= Date.UTC(year, month, date, hrs, min, sec)
-	 System.out.println(startDate);
-	 System.out.println(endDate);
+	 String strDate = "2017-10-17 23:20"; 
+	 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm"); 
+	 Date startDate = sdf.parse(strDate);
+	 String strwDate = "2017-10-17 23:20"; 
+	 SimpleDateFormat sdfw = new SimpleDateFormat("yyyy-MM-dd HH:mm"); 
+	 Date endDate = sdfw.parse(strDate);
+
+	
+     
 	 
 	 System.out.println(location);
 	 String[] array = location.split(",");
