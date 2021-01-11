@@ -17,13 +17,12 @@ public class Gathering {
 	// gatherings table
 	private int fee;// 모임이면 값이 있으나 밋팅이면 0
 
-	
-	public Gathering() {
-		// TODO Auto-generated constructor stub
-	}
 
 	
-	
+	public Gathering(int fee) {
+		super();
+		this.fee = fee;
+	}
 
 	public Gathering(int no, int districtNo, int crewNo, char type, Date startDate, Date endDate, String name,
 			String address, String description, double lat, double lng, int fee) {
@@ -40,9 +39,21 @@ public class Gathering {
 		this.lng = lng;
 		this.fee = fee;
 	}
-
-
-
+	
+	public Gathering(int districtNo, int crewNo, char type, Date startDate, Date endDate, String name, String address,
+			String description, double lat, double lng) {
+		super();
+		this.districtNo = districtNo;
+		this.crewNo = crewNo;
+		this.type = type;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.name = name;
+		this.address = address;
+		this.description = description;
+		this.lat = lat;
+		this.lng = lng;
+	}
 
 	public int getNo() {
 		return no;

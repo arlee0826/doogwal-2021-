@@ -7,11 +7,10 @@
 
 
 <insert id="insert" parameterType="Gathering">
-	INSERT INTO schedules(no,start_date,end_date,name,address,description,lat,lng,regdate,district_no,type,crew_no)
-	VALUES(schedules_seq.nextval,#{startDate},#{endDate},#{name},#{address},#{description},#{lat},#{lng},systimestamp,#{districtNo},#{type},#{crewNo})
+
+	INSERT INTO gatherings(no, fee, regdate)
+	VALUES(5000,#{fee},sysdate)
+
 </insert>
 </mapper>  
-
-
-
 

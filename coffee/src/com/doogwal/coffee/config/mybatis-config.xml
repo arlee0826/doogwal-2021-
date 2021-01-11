@@ -36,5 +36,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/doogwal/coffee/mapper/districts.xml" />
 		<mapper resource="com/doogwal/coffee/mapper/gatherings.xml" />
 		<mapper resource="com/doogwal/coffee/mapper/users.xml" />
+		<mapper resource="com/doogwal/coffee/mapper/schedules.xml" />
 </mappers>
 </configuration>

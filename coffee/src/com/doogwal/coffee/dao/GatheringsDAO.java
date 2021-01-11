@@ -18,7 +18,7 @@ public class GatheringsDAO {
 		}finally {
 			session.close();
 		}
-		return result;
+		return 0;
 	}
 }
 

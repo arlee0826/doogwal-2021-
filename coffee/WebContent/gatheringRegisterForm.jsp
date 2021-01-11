@@ -420,6 +420,8 @@
 
     $(".checkbox_date").click(function () {
         if($(this).prop("checked")==true){
+        	$("#startTime").val("00:00");
+        	$("#endTime").val("23:59");
             $(".input_time").prop("disabled",true);
         }else{
             $(".input_time").prop("disabled",false);

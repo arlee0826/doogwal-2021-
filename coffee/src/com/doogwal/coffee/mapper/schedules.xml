@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC	
+"-//mybatis.org//DTD Mapper 3.0//EN"	
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="schedules">
+<insert id="insert" parameterType="Gathering">
+	INSERT INTO schedules(no, start_date, end_date, name, address, description, lat, lng, regdate, district_no, type, crew_no)
+	VALUES(5000, #{startDate}, #{endDate}, #{name}, #{address}, #{description}, #{lat}, #{lng}, systimestamp, #{districtNo}, #{type}, #{crewNo})
+</insert>
+</mapper>  
+
+
+
