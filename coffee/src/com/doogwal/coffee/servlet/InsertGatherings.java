@@ -3,7 +3,6 @@ package com.doogwal.coffee.servlet;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,15 +45,12 @@ import com.doogwal.coffee.vo.Gathering;
 	 int fee = Integer.parseInt(feeString); //회비
 	 System.out.println(fee);
 	 
-	 String strDate = "2017-10-17 23:20"; 
-	 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm"); 
-	 Date startDate = sdf.parse(strDate);
-	 String strwDate = "2017-10-17 23:20"; 
-	 SimpleDateFormat sdfw = new SimpleDateFormat("yyyy-MM-dd HH:mm"); 
-	 Date endDate = sdfw.parse(strDate);
 
-	
-     
+	 System.out.println(date+" "+startTime+":00");
+	 Timestamp startDate = Timestamp.valueOf(date+" "+startTime+":00");
+	 System.out.println(date+" "+endTime+":00");
+	 Timestamp endDate = Timestamp.valueOf(date+" "+endTime+":00");
+
 	 
 	 System.out.println(location);
 	 String[] array = location.split(",");
@@ -73,9 +69,17 @@ import com.doogwal.coffee.vo.Gathering;
 	 int districtNo = district.getNo(); //행정구역 번호
 	 System.out.println(districtNo);
 
-	 String[] preparationToken = preparation.split(",");
-	 System.out.println(preparationToken[0]);
-	 System.out.println(preparationToken[1]); //한개일 경우 에러가 떠요 수정!!
+	 String[] preparationToken = preparation.split(","); //한개일 경우 에러가 떠요 수정!!
+	 if(preparationToken[0]!=null) {
+		 System.out.println("준비물 1");
+	 }
+	 else if(preparationToken[1]!=null){
+		 System.out.println("준비물 1");
+	 }
+	 
+	 
+	 
+	 
 	 
 	 System.out.println("-1");
 	 int crewNo = 500; //임시 크루번호

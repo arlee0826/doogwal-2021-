@@ -9,22 +9,19 @@ public class Gathering {
 	// schedules table
 	private int no,districtNo,crewNo;	
 	private char type;
-	private Date startDate,endDate;
+	private Timestamp startDate,endDate,regdate;
 	private String name,address,description;
 	private double lat,lng;
-	private Timestamp regdate;
-	
 	// gatherings table
 	private int fee;// 모임이면 값이 있으나 밋팅이면 0
 
 
-	
 	public Gathering(int fee) {
 		super();
 		this.fee = fee;
 	}
 
-	public Gathering(int no, int districtNo, int crewNo, char type, Date startDate, Date endDate, String name,
+	public Gathering(int no, int districtNo, int crewNo, char type, Timestamp startDate, Timestamp endDate, String name,
 			String address, String description, double lat, double lng, int fee) {
 		this.no = no;
 		this.districtNo = districtNo;
@@ -40,7 +37,7 @@ public class Gathering {
 		this.fee = fee;
 	}
 	
-	public Gathering(int districtNo, int crewNo, char type, Date startDate, Date endDate, String name, String address,
+	public Gathering(int districtNo, int crewNo, char type, Timestamp startDate, Timestamp endDate, String name, String address,
 			String description, double lat, double lng) {
 		super();
 		this.districtNo = districtNo;
@@ -95,22 +92,22 @@ public class Gathering {
 	}
 
 
-	public Date getStartDate() {
+	public Timestamp getStartDate() {
 		return startDate;
 	}
 
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(Timestamp startDate) {
 		this.startDate = startDate;
 	}
 
 
-	public Date getEndDate() {
+	public Timestamp getEndDate() {
 		return endDate;
 	}
 
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(Timestamp endDate) {
 		this.endDate = endDate;
 	}
 
