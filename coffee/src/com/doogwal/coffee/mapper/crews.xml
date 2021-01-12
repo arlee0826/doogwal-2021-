@@ -7,7 +7,7 @@
 <select id="selectList"  resultType="Crew">
 SELECT COVER_IMG coverImg, NAME, INTRO, category_no categoryNo, avg_Age avgAge, CUR_POP curPop, gender_Rate genderRate
 FROM crews
-WHERE sysdate < add_months(regdate,+6) AND CUR_POP<30 AND ROWNUM<9
+<![CDATA[WHERE sysdate<ADD_MONTHS(regdate, +6) AND CUR_POP<30 AND ROWNUM<9]]>
 ORDER BY CUR_POP DESC;
 </select>
 
