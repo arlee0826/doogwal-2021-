@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC	
+"-//mybatis.org//DTD Mapper 3.0//EN"	
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="crewMembers">
+
+<!-- 주성호 2021 01 11 header-->
+<!--20210112 1615 주성호 헤더 -->
+	<select id="selectOwnList" parameterType="int"  resultType="CrewMember">
+		SELECT m.no, c.no, user_no userNo, role, report_num reportNum, profile_img profileImg, introduction, type, m.regdate, cover_img coverImg
+		FROM crew_members m, crews c
+		WHERE m.user_no=#{no} AND m.crew_no = c.no
+		ORDER BY 9
+	</select>
+
+</mapper>

@@ -1,5 +1,12 @@
+<%@page import="com.doogwal.coffee.vo.Crew"%>
+<%@page import="java.util.List"%>
+<%@page import="com.doogwal.coffee.dao.CrewsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   
+<%
+	List<Crew> crews = CrewsDAO.selectList();
+%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,30 +69,30 @@
             <ul class="search_specifics">
                 <li class="category"><button class="category_a">분류</button>
                     <div class="category_box"><!-- category_box start-->
-                        <a href="" class="game">게임</a>
-                        <a href="" class="art">문화/예술</a>
-                        <a href="" class="pet">반려동물</a>
-                        <a href="" class="volunteer">봉사활동</a>
-                        <a href="" class="social_gathering">사교모임</a>
-                        <a href="" class="study">스터디</a>
-                        <a href="" class="sports">스포츠/레저</a>
-                        <a href="" class="music">음악/악기</a>
-                        <a href="" class="outdoor">아웃도어</a>
+                        <a href="/searchPage.jsp?no=?age=<%= %>?num=<%= %>" class="game">게임</a>
+                        <a href="/searchPage.jsp?no=?age=<%= %>?num=<%= %>" class="art">문화/예술</a>
+                        <a href="/searchPage.jsp?no=?age=<%= %>?num=<%= %>" class="pet">반려동물</a>
+                        <a href="/searchPage.jsp?no=4?age=<%= %>?num=<%= %>" class="volunteer">봉사활동</a>
+                        <a href="/searchPage.jsp?no=5?age=<%= %>?num=<%= %>" class="social_gathering">사교모임</a>
+                        <a href="/searchPage.jsp?no=6?age=<%= %>?num=<%= %>" class="study">스터디</a>
+                        <a href="/searchPage.jsp?no=7?age=<%= %>?num=<%= %>" class="sports">스포츠/레저</a>
+                        <a href="/searchPage.jsp?no=8?age=<%= %>?num=<%= %>" class="music">음악/악기</a>
+                        <a href="/searchPage.jsp?no=2?age=<%= %>?num=<%= %>" class="outdoor">아웃도어</a>
                     </div><!-- category_box end-->
                 </li>
 
                 <li class="ages"><button class="ages_a">연령대</button>
                     <div class="age_box"><!-- age_box start -->
-                        <a href="" class="twenties">20대</a>
-                        <a href="" class="thirties">30대</a>
-                        <a href="" class="forties">40대</a>
-                        <a href="" class="fifties">50대</a>
+                        <a href="/searchPage.jsp?no=<%= %>?age=2?num=<%= %>" class="twenties">20대</a>
+                        <a href="/searchPage.jsp?no=<%= %>?age=3?num=<%= %>" class="thirties">30대</a>
+                        <a href="/searchPage.jsp?no=<%= %>?age=4?num=<%= %>" class="forties">40대</a>
+                        <a href="/searchPage.jsp?no=<%= %>?age=5?num=<%= %>" class="fifties">50대</a>
                     </div><!--age_box end -->
                 </li>
                 <li class="number_of_crew"><button class="number_of_crew_a">크루원 수</button>
                     <div class="number_of_crew_box"><!-- number_of_crew_box start-->
-                        <a href="" class="number_of_crew_descending">많은순</a>
-                        <a href="" class="number_of_crew_ascending">적은순</a>
+                        <a href="/searchPage.jsp?no=<%= %>?age=<%= %>?num=1" class="number_of_crew_descending">많은순</a>
+                        <a href="/searchPage.jsp?no=<%= %>?age=<%= %>?num=2" class="number_of_crew_ascending">적은순</a>
                     </div><!-- number_of_crew_box end-->
                 </li>
             </ul>
@@ -98,14 +105,9 @@
             </div><!--// crews_recruiting_new_members_box_top end-->
             <div>
                 <ul class="crews_recruiting_new_members_list">
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/knitting.jpg" width="247.5" height="180"/><p>취쉐어</p><p>2030 취미를 공유하는 동호회입니다</p></a></li>
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/soccer3.jpg." width="247.5" height="180"/><p>축구왕 슛돌이</p><p>편안한 사람들을 추구해요</p></a></li>
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/soccer1.jpg." width="247.5" height="180"/><p>두괄</p><p>똑바로 말하세요</p></a></li>
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/gallery-2932005_1920.jpg" width="247.5" height="180"/><p>갤러리아</p><p>미술 목적 동호회</p></a></li>
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/category1.jpg" width="247.5" height="180"/><p>산오름</p><p>친목위주의 산악 동호회</p></a></li>
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/category1.jpg" width="247.5" height="180"/><p>주저리주저리</p><p>편안한 사람들을 추구해요</p></a></li>
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/puppy_meeting1.jpg" width="247.5" height="180"/><p>자식보다 귀엽다</p><p>방에만 있는 아들보다 강아지</p></a></li>
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/category1.jpg" width="247.5" height="180"/><p>아재FC</p><p>끝나고 쏘주 한잔!</p></a></li>
+                    <% for ( Crew crew : crews ) { %>
+                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/<%=crew.getCoverImg() %>" width="247.5" height="180"/><p><%=crew.getName()%></p><p><%=crew.getIntro() %></p></a></li>
+                    <% } %>
                 </ul>
             </div>
         </div><!--// crews_recruiting_new_members_box end -->
@@ -160,7 +162,7 @@
     });
 
     $(".game").click(function (e) {
-        e.preventDefault();
+    
         $(".category_a").text("게임").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
@@ -168,7 +170,6 @@
         $(".category_box").show();
     });
     $(".art").click(function (e) {
-        e.preventDefault();
         $(".category_a").text("문화/예술").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
@@ -176,7 +177,6 @@
         $(".category_box").show();
     });
     $(".pet").click(function (e) {
-        e.preventDefault();
         $(".category_a").text("반려동물").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
@@ -184,7 +184,6 @@
         $(".category_box").show();
     });
     $(".volunteer").click(function (e) {
-        e.preventDefault();
         $(".category_a").text("봉사활동").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
@@ -192,7 +191,6 @@
         $(".category_box").show();
     });
     $(".social_gathering").click(function (e) {
-        e.preventDefault();
         $(".category_a").text("사교모임").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
@@ -200,7 +198,6 @@
         $(".category_box").show();
     });
     $(".study").click(function (e) {
-        e.preventDefault();
         $(".category_a").text("스터디").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
@@ -208,7 +205,6 @@
         $(".category_box").show();
     });
     $(".sports").click(function (e) {
-        e.preventDefault();
         $(".category_a").text("스포츠/레저").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
@@ -216,7 +212,6 @@
         $(".category_box").show();
     });
     $(".music").click(function (e) {
-        e.preventDefault();
         $(".category_a").text("음악/악기").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
@@ -224,7 +219,6 @@
         $(".category_box").show();
     });
     $(".outdoor").click(function (e) {
-        e.preventDefault();
         $(".category_a").text("아웃도어").css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });

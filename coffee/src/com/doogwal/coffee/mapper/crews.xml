@@ -8,7 +8,9 @@
 SELECT COVER_IMG coverImg, NAME, INTRO, category_no categoryNo, avg_Age avgAge, CUR_POP curPop, gender_Rate genderRate
 FROM crews
 <![CDATA[WHERE sysdate<ADD_MONTHS(regdate, +6) AND CUR_POP<30 AND ROWNUM<9]]>
-ORDER BY CUR_POP DESC;
+ORDER BY CUR_POP DESC
 </select>
+
+
 
 </mapper>
