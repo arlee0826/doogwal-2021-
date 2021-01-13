@@ -19,4 +19,22 @@ public class SchedulesDAO {
 		}
 		return 0;
 	}
+	
+	public static Gathering selectOne(int no) {
+		
+		SqlSession session = null;
+		
+		try {
+			session = SqlSessionUtil.getSession();
+			
+			return session.selectOne("schedules.selectOne",no);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		
+		return null;
+	}
 }

@@ -5,10 +5,18 @@
 
 <mapper namespace="schedules">
 <insert id="insert" parameterType="Gathering">
-	INSERT INTO schedules(no, start_date, end_date, name, address, description, lat, lng, regdate, district_no, type, crew_no)
-	VALUES(5000, #{startDate}, #{endDate}, #{name}, #{address}, #{description}, #{lat}, #{lng}, systimestamp, #{districtNo}, #{type}, #{crewNo})
+	<selectKey order="BEFORE" resultType="int" keyProperty="no">
+		SELECT schedules_seq.nextval
+		FROM dual
+	</selectKey>
+	INSERT INTO schedules(no, start_date startDate, end_date endDate, name, address, description, lat, lng, regdate, district_no districtNo, type, crew_no crewNo)
+	VALUES(#{no}, #{startDate}, #{endDate}, #{name}, #{address}, #{description}, #{lat}, #{lng}, systimestamp, #{districtNo}, #{type}, #{crewNo})
 </insert>
+
+<select id="selectOne" resultType="Gathering" parameterType="int">
+	SELECT district_no districtNo,crew_no crewNo,type,start_date startDate,end_date endDate,name,address,description,lat,lng
+	FROM schedules
+	WHERE no=#{no}
+</select>
 </mapper>  
-
-
 
