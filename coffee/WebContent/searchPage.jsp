@@ -4,17 +4,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    
-<%
-	List<Crew> crews = CrewsDAO.selectList();
-%>   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>검색결과</title>
-   <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/default.css" />
+<%@ include file="/WEB-INF/template/link.jsp" %>
     <link rel="stylesheet" href="css/searchPage.css" />
 </head>
 <body>
@@ -67,33 +62,35 @@
     <div id="content"><!-- content start-->
         <div class="meeting_filters"><!-- meeting_filters start-->
             <ul class="search_specifics">
-                <li class="category"><button class="category_a">분류</button>
-                    <div class="category_box"><!-- category_box start-->
-                        <a href="/searchPage.jsp?no=?age=<%= %>?num=<%= %>" class="game">게임</a>
-                        <a href="/searchPage.jsp?no=?age=<%= %>?num=<%= %>" class="art">문화/예술</a>
-                        <a href="/searchPage.jsp?no=?age=<%= %>?num=<%= %>" class="pet">반려동물</a>
-                        <a href="/searchPage.jsp?no=4?age=<%= %>?num=<%= %>" class="volunteer">봉사활동</a>
-                        <a href="/searchPage.jsp?no=5?age=<%= %>?num=<%= %>" class="social_gathering">사교모임</a>
-                        <a href="/searchPage.jsp?no=6?age=<%= %>?num=<%= %>" class="study">스터디</a>
-                        <a href="/searchPage.jsp?no=7?age=<%= %>?num=<%= %>" class="sports">스포츠/레저</a>
-                        <a href="/searchPage.jsp?no=8?age=<%= %>?num=<%= %>" class="music">음악/악기</a>
-                        <a href="/searchPage.jsp?no=2?age=<%= %>?num=<%= %>" class="outdoor">아웃도어</a>
-                    </div><!-- category_box end-->
+                <li class="category">
+                	<button class="category_a">분류</button>
+                    <ul class="category_box"><!-- category_box start-->
+                        <li><a href="/searchPage.jsp?categoryNo=" class="game">게임</a></li>
+                        <li><a href="/searchPage.jsp?categoryNo=" class="art">문화/예술</a></li>
+                        <li><a href="/searchPage.jsp?categoryNo=" class="pet">반려동물</a></li>
+                        <li><a href="/searchPage.jsp?categoryNo=" class="volunteer">봉사활동</a></li>
+                        <li><a href="/searchPage.jsp?categoryNo=" class="social_gathering">사교모임</a></li>
+                        <li><a href="/searchPage.jsp?categoryNo=" class="study">스터디</a></li>
+                        <li><a href="/searchPage.jsp?categoryNo=" class="sports">스포츠/레저</a></li>
+                        <li><a href="/searchPage.jsp?categoryNo=" class="music">음악/악기</a></li>
+                        <li><a href="/searchPage.jsp?categoryNo=" class="outdoor">아웃도어</a></li>
+                    </ul><!-- category_box end-->
                 </li>
 
                 <li class="ages"><button class="ages_a">연령대</button>
-                    <div class="age_box"><!-- age_box start -->
-                        <a href="/searchPage.jsp?no=<%= %>?age=2?num=<%= %>" class="twenties">20대</a>
-                        <a href="/searchPage.jsp?no=<%= %>?age=3?num=<%= %>" class="thirties">30대</a>
-                        <a href="/searchPage.jsp?no=<%= %>?age=4?num=<%= %>" class="forties">40대</a>
-                        <a href="/searchPage.jsp?no=<%= %>?age=5?num=<%= %>" class="fifties">50대</a>
-                    </div><!--age_box end -->
+                    <ul class="age_box"><!-- age_box start -->
+                        <li><a href="/searchPage.jsp?age=" class="twenties">20대</a></li>
+                        <li><a href="/searchPage.jsp?age=" class="thirties">30대</a></li>
+                        <li><a href="/searchPage.jsp?age=" class="forties">40대</a></li>
+                        <li><a href="/searchPage.jsp?age=" class="fifties">50대</a></li>
+                    </ul><!--age_box end -->
                 </li>
+                
                 <li class="number_of_crew"><button class="number_of_crew_a">크루원 수</button>
-                    <div class="number_of_crew_box"><!-- number_of_crew_box start-->
-                        <a href="/searchPage.jsp?no=<%= %>?age=<%= %>?num=1" class="number_of_crew_descending">많은순</a>
-                        <a href="/searchPage.jsp?no=<%= %>?age=<%= %>?num=2" class="number_of_crew_ascending">적은순</a>
-                    </div><!-- number_of_crew_box end-->
+                  	<ul class="number_of_crew_box"><!-- number_of_crew_box start-->
+                        <li><a href="/searchPage.jsp?memberSize=" class="number_of_crew_descending">많은순</a></li>
+                        <li><a href="/searchPage.jsp?memberSize=" class="number_of_crew_ascending">적은순</a></li>
+                    </ul><!-- number_of_crew_box end-->
                 </li>
             </ul>
         </div><!--//meeting_filters end-->
@@ -105,9 +102,7 @@
             </div><!--// crews_recruiting_new_members_box_top end-->
             <div>
                 <ul class="crews_recruiting_new_members_list">
-                    <% for ( Crew crew : crews ) { %>
-                    <li class="crews_recruiting_new_members_item"><a href=""><img src="img/<%=crew.getCoverImg() %>" width="247.5" height="180"/><p><%=crew.getName()%></p><p><%=crew.getIntro() %></p></a></li>
-                    <% } %>
+                  
                 </ul>
             </div>
         </div><!--// crews_recruiting_new_members_box end -->
@@ -134,8 +129,27 @@
         </dl>
     </div><!--//footer_container end-->
 </div><!--//footer end-->
-<script src="js/jquery.js"></script>
+
+<script type="text/template" id="searchListTmpl">
+<@ _.each(crew,function(c){@>
+<li class="crews_recruiting_new_members_item"><a href="">
+    <img class="crew_img" src="img/<@=c.crew_img @>" width="247.5" height="180"/>
+    <p class="crew_name"><@=c.crew_name @></p>
+    <p class="crew_introduction"><@=c.crew_introduction @></p></a>
+</li>
+<@})@>
+</script>
+
 <script>
+
+
+
+//검색결과 ajax 코드
+_.templateSettings = {interpolate: /\<\@\=(.+?)\@\>/gim,evaluate: /\<\@([\s\S]+?)\@\>/gim,escape: /\<\@\-(.+?)\@\>/gim};
+
+const searchListTmpl = _.template($('#searchListTmpl').html());
+const $crewsRecruitingNewMembersList = $('.crews_recruiting_new_members_list');
+
     $(window).scroll(function (evt) {
         let y = $(this).scrollTop();
         if(y>400){
@@ -161,120 +175,63 @@
         }
     });
 
-    $(".game").click(function (e) {
-    
-        $(".category_a").text("게임").css("color","#3D41B3").css("font-weight","900");
-        $(".category_box").hide();
-    });
-    $(".category").mouseenter(function () {
-        $(".category_box").show();
-    });
-    $(".art").click(function (e) {
-        $(".category_a").text("문화/예술").css("color","#3D41B3").css("font-weight","900");
-        $(".category_box").hide();
-    });
-    $(".category").mouseenter(function () {
-        $(".category_box").show();
-    });
-    $(".pet").click(function (e) {
-        $(".category_a").text("반려동물").css("color","#3D41B3").css("font-weight","900");
-        $(".category_box").hide();
-    });
-    $(".category").mouseenter(function () {
-        $(".category_box").show();
-    });
-    $(".volunteer").click(function (e) {
-        $(".category_a").text("봉사활동").css("color","#3D41B3").css("font-weight","900");
-        $(".category_box").hide();
-    });
-    $(".category").mouseenter(function () {
-        $(".category_box").show();
-    });
-    $(".social_gathering").click(function (e) {
-        $(".category_a").text("사교모임").css("color","#3D41B3").css("font-weight","900");
-        $(".category_box").hide();
-    });
-    $(".category").mouseenter(function () {
-        $(".category_box").show();
-    });
-    $(".study").click(function (e) {
-        $(".category_a").text("스터디").css("color","#3D41B3").css("font-weight","900");
-        $(".category_box").hide();
-    });
-    $(".category").mouseenter(function () {
-        $(".category_box").show();
-    });
-    $(".sports").click(function (e) {
-        $(".category_a").text("스포츠/레저").css("color","#3D41B3").css("font-weight","900");
-        $(".category_box").hide();
-    });
-    $(".category").mouseenter(function () {
-        $(".category_box").show();
-    });
-    $(".music").click(function (e) {
-        $(".category_a").text("음악/악기").css("color","#3D41B3").css("font-weight","900");
-        $(".category_box").hide();
-    });
-    $(".category").mouseenter(function () {
-        $(".category_box").show();
-    });
-    $(".outdoor").click(function (e) {
-        $(".category_a").text("아웃도어").css("color","#3D41B3").css("font-weight","900");
+    //분류 드롭박스
+    $('.category_box a').click(function(e){
+        e.preventDefault();
+        $('.category_a').text($(this).text()).css("color","#3D41B3").css("font-weight","900");
         $(".category_box").hide();
     });
     $(".category").mouseenter(function () {
         $(".category_box").show();
     });
 
-    $(".twenties").click(function (e) {
+    //연령대 드롭박스
+    $(".age_box a").click(function (e) {
         e.preventDefault();
-       $(".ages_a").text("20대").css("color","#3D41B3").css("font-weight","900");
+       $(".ages_a").text($(this).text()).css("color","#3D41B3").css("font-weight","900");
         $(".age_box").hide();
     });
     $(".ages").mouseenter(function (e) {
         $(".age_box").show();
     });
-    $(".thirties").click(function (e) {
-        e.preventDefault();
-        $(".ages_a").text("30대").css("color","#3D41B3").css("font-weight","900");
-        $(".age_box").hide();
-    });
-    $(".ages").mouseenter(function () {
-        $(".age_box").show();
-    });
-    $(".forties").click(function (e) {
-        e.preventDefault();
-        $(".ages_a").text("40대").css("color","#3D41B3").css("font-weight","900");
-        $(".age_box").hide();
-    });
-    $(".ages").mouseenter(function () {
-        $(".age_box").show();
-    });
-    $(".fifties").click(function (e) {
-        e.preventDefault();
-        $(".ages_a").text("50대").css("color","#3D41B3").css("font-weight","900");
-        $(".age_box").hide();
-    });
-    $(".ages").mouseenter(function () {
-        $(".age_box").show();
-    });
 
-    $(".number_of_crew_ascending").click(function (e) {
+    //크루원수 드롭박스
+    $(".number_of_crew_box a").click(function (e) {
         e.preventDefault();
-        $(".number_of_crew_a").text("적은순").css("color","#3D41B3").css("font-weight","900");
-        $(".number_of_crew_box").hide();
-    });
-    $(".number_of_crew").mouseenter(function () {
-        $(".number_of_crew_box").show();
-    })
-    $(".number_of_crew_descending").click(function (e) {
-        e.preventDefault();
-        $(".number_of_crew_a").text("많은순").css("color","#3D41B3").css("font-weight","900");
+        $(".number_of_crew_a").text($(this).text()).css("color","#3D41B3").css("font-weight","900");
         $(".number_of_crew_box").hide();
     });
     $(".number_of_crew").mouseenter(function () {
         $(".number_of_crew_box").show();
     });
+    
+    let categoryNo= null;
+    let ages = null;
+    let order = "desc";
+
+    function getSearchCrewList() {
+        $.ajax({
+            url:"/ajax/getSearchCrewList.json",
+            type : 'GET',
+            data:{
+            	categoryNo:categoryNo,
+            	ages:ages,
+            	order:order
+            },
+            dataType : "json",
+            error : function(xhr, error, code) {
+                alert("에러:" + code);
+            },
+            success:function(json) {
+                console.log(json);
+                $crewsRecruitingNewMembersList.html(searchListTmpl({crew : json}));
+            }
+        });
+    }// getSearchCrewList();
+    
+    
+    
+    getSearchCrewList();
 </script>
 </body>
 </html>

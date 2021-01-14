@@ -5,4 +5,5 @@
 <link rel="stylesheet" href="css/default.css" />
 <link rel="stylesheet" href="css/all.min.css" />
 <script src="/js/jquery.js"></script>
+<script src="/js/underscore-min.js"></script>
 <script src="/js/moment-with-locales.js"></script>
