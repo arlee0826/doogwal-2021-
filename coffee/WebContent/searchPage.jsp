@@ -130,6 +130,7 @@
     </div><!--//footer_container end-->
 </div><!--//footer end-->
 
+<!-- 검색결과 크루 리스트 템플릿 -->
 <script type="text/template" id="searchListTmpl">
 <@ _.each(crew,function(c){@>
 <li class="crews_recruiting_new_members_item"><a href="">
@@ -141,8 +142,6 @@
 </script>
 
 <script>
-
-
 
 //검색결과 ajax 코드
 _.templateSettings = {interpolate: /\<\@\=(.+?)\@\>/gim,evaluate: /\<\@([\s\S]+?)\@\>/gim,escape: /\<\@\-(.+?)\@\>/gim};
@@ -212,7 +211,7 @@ const $crewsRecruitingNewMembersList = $('.crews_recruiting_new_members_list');
     function getSearchCrewList() {
         $.ajax({
             url:"/ajax/getSearchCrewList.json",
-            type : 'GET',
+            type : "GET",
             data:{
             	categoryNo:categoryNo,
             	ages:ages,
@@ -228,8 +227,6 @@ const $crewsRecruitingNewMembersList = $('.crews_recruiting_new_members_list');
             }
         });
     }// getSearchCrewList();
-    
-    
     
     getSearchCrewList();
 </script>
