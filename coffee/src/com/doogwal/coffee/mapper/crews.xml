@@ -4,11 +4,17 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="crews">
-<select id="selectList"  resultType="Crew">
+<select id="selectSearchList"  resultType="Crew" parameterType="map">
 SELECT COVER_IMG coverImg, NAME, INTRO, category_no categoryNo, avg_Age avgAge, CUR_POP curPop, gender_Rate genderRate
 FROM crews
-<![CDATA[WHERE sysdate<ADD_MONTHS(regdate, +6) AND CUR_POP<30 AND ROWNUM<9]]>
-ORDER BY CUR_POP DESC
+WHERE ADD_MONTHS(regdate, +6)>sysdate AND 30>CUR_POP
+<if test="categoryNo != null">
+AND category_no IN(SELECT no FROM categories WHERE prior_no = #{categoryNo})
+</if>
+<if test="minAge != null">
+AND avg_age BETWEEN #{minAge} AND #{maxAge}
+</if>
+ORDER BY CUR_POP ${order}
 </select>
 
 
