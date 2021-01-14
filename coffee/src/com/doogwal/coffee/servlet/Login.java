@@ -1,6 +1,7 @@
 package com.doogwal.coffee.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.doogwal.coffee.dao.CrewMembersDAO;
 import com.doogwal.coffee.dao.UsersDAO;
+import com.doogwal.coffee.vo.CrewMember;
 import com.doogwal.coffee.vo.User;
 
 @WebServlet("/login.do")
@@ -18,32 +21,43 @@ public class Login extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		//¿ì¼± ¼¼¼Ç ¾ò°í
+		//ìš°ì„  ì„¸ì…˜ ì–»ê³ 
 		HttpSession session = req.getSession();
 		
-		//¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£ ¹Ş±â
+		//ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ ë°›ê¸°
 		String id = req.getParameter("loginId");
 		String password = req.getParameter("loginPassword");
 		
 		System.out.println(id);
 		System.out.println(password);
 		
-		//À¯Àú °´Ã¼ »ı¼º
+		//ìœ ì € ê°ì²´ ìƒì„±
 		User user = new User();
 		user.setEmail(id);
 		user.setPassword(password);
 		
-		//À¯Àú°¡ ¸Â´ÂÁö È®ÀÎ
+		//ìœ ì €ê°€ ë§ëŠ”ì§€ í™•ì¸
 		User loginUser = UsersDAO.selectLogin(user);
 		
+		// ìœ ì €ì˜ ì§„í–‰ì¤‘ì¸ crew ê°€ì ¸ì˜¤ê¸°
+		List<CrewMember> ownCrewList = CrewMembersDAO.selectOwnList(loginUser.getNo());
+		System.out.println("onwCrewList ì‚¬ì´ì¦ˆ:" + ownCrewList.size());	
 		if(loginUser!=null) {
 			session.setAttribute(User.LOGIN, loginUser);
-			System.out.println("¼º°ø");
+			int idx=0;
+			if(ownCrewList !=null) {
+				for(CrewMember crewMember: ownCrewList) {
+					session.setAttribute("userCrewList"+ (idx++), crewMember);
+				}//for() end
+			}
+			System.out.println("ì„±ê³µ");
+			resp.sendRedirect("/index.jsp");
 		}else {
 			session.setAttribute("fail", "true");
-			System.out.println("½ÇÆĞ");
+			System.out.println("ì‹¤íŒ¨");
+			resp.sendRedirect("/loginForm.jsp");
 		}//if~else end
 		
-		resp.sendRedirect("/loginForm.jsp");
-	}
-}
+		
+	}//doPost() end
+}//Login end

@@ -4,6 +4,47 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="crews">
+<!-- 주성호 2021 01 11 header start-->
+<select id="selectOwnList" parameterType="int"  resultType="Crew">
+SELECT c.no, c.name, c.cover_img coverImg,c.intro,min_age minAge,max_age maxAge,max_pop maxPop,cur_pop curPop,category_no categoryNo,c.regdate,avg_age avgAge,gender_rate genderRate,point
+FROM crew_members m, crews c
+WHERE m.user_no=#{no} AND m.crew_no = c.no
+ORDER BY 1
+</select>
+	
+<select id="selectCrewByName" parameterType="String" resultType="int">
+SELECT no
+FROM crews
+WHERE name=#{name}
+</select>
+	
+<!-- 주성호 2021 01 11 check name-->
+<select id="selectCheckName" parameterType="String"  resultType="int">
+SELECT COUNT(*)
+FROM crews
+WHERE name = #{name}
+</select>
+<!-- 주성호 2021 01 11 end-->
+
+<!-- 주성호 2021 01 14 start-->
+<insert id="insertCrew" parameterType="Crew">
+INSERT INTO crews(no, name, cover_img, intro, min_age, max_age, max_pop, cur_pop, category_no,gender_rate,avg_age,point, regdate)
+VALUES(crews_seq.nextval, #{name},#{coverImg} ,#{intro}, #{minAge}, #{maxAge}, #{maxPop},#{curPop} ,#{categoryNo},#{genderRate},#{avgAge},#{point} , systimestamp)
+</insert>
+<!-- 주성호 2021 01 14 end-->
+
+<!--박형우 start-->
+<!--20210114 start-->
+<select id="selectCrewAllInformation" parameterType="int" resultType="Crew">
+SELECT NO, NAME, COVER_IMG coverImg, INTRO, MIN_AGE minAge, MAX_AGE maxAge, MAX_POP maxPop, CUR_POP curPop, CATEGORY_NO categoryNo, REGDATE, AVG_AGE avgAge, GENDER_RATE genderRate, POINT
+FROM crews
+where no=#{no}	
+</select>
+<!--20210114 end-->
+<!--박형우  end-->
+
+
+<!--이아림 20210114 searchList(동적쿼리) start -->
 <select id="selectSearchList"  resultType="Crew" parameterType="map">
 SELECT COVER_IMG coverImg, NAME, INTRO, category_no categoryNo, avg_Age avgAge, CUR_POP curPop, gender_Rate genderRate
 FROM crews
@@ -16,6 +57,8 @@ AND avg_age BETWEEN #{minAge} AND #{maxAge}
 </if>
 ORDER BY CUR_POP ${order}
 </select>
+<!--이아림 20210114 searchList end -->
+
 
 
 

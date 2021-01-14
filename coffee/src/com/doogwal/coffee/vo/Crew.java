@@ -15,7 +15,6 @@ public class Crew {
 	}
 	
 	
-
 	public Crew(int curPop, int categoryNo, float avgAge, float genderRate, String name, String coverImg,
 			String intro) {
 		super();

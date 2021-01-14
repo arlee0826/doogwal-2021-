@@ -19,11 +19,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @WebServlet("/ajax/getSearchCrewList.json")
 public class GetSearchCrewList extends HttpServlet{
 
+	//20210114 이아림 start
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-	//DB와 연동해서 카테고리를 불러와야 함
-		
 		
 		String categoryNo = req.getParameter("categoryNo");
 		String agesStr = req.getParameter("ages"); 
@@ -53,6 +51,8 @@ public class GetSearchCrewList extends HttpServlet{
 		PrintWriter  out = resp.getWriter();
 		
 		out.print(json);
+		//20210114 이아림 end
+		
 		
 	}//doGet() end
 	

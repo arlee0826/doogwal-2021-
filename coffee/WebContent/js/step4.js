@@ -1,5 +1,10 @@
 /*step4 start*/
+// % -> @ 으로
 let question=0;
+let answer=0;
+
+//% -> @ 으로
+_.templateSettings = {interpolate: /\<\@\=(.+?)\@\>/gim,evaluate: /\<\@([\s\S]+?)\@\>/gim,escape: /\<\@\-(.+?)\@\>/gim};
 
 let $questionNum = $('.question_num');
 
@@ -61,23 +66,77 @@ $(document).on("click", '.remove_question',function (e) {
     });
 });
 
+
 //보기 추가 버튼 클릭
 // 템플릿으로 만들어진 애들은 인자 3개짜리로 만들어야한다.
 $(document).on("click", '.add_answer',function (e) {
-    console.log("click");
-    $('.question_item').append(multipleChoiceAnswerTmpl);
+    //console.log("click");
+    const $that = $(this).parent().parent();
+    $that.append(multipleChoiceAnswerTmpl);
+    let val = $that.children().next().val();
+    $that.children().next().val(++val);
+    console.log($that.children().next().val());
     $(this).parent().remove();
 });
 
 // 객관식 답변 보기 삭제제
 const $removeAnswer = $('.remove_answer');
 $(document).on("click", '.remove_answer',function (e){
-    console.log($(this).parent().parent().children().length);
-    if($(this).parent().parent().children().length<5){
+    const $that = $(this).parent().parent().children().next();
+    let val = $that.val();
+    //console.log($(this).parent().parent().children().length);
+    if($(this).parent().parent().children().length<7){
         console.log($(this).parent().parent().children().length);
     }else {
+		$that.val(--val);
         $(this).parent().remove();
     }
 });
 
+
+
+
+let qList =[];
+const questionExp = /^[ㄱ-힣|a-zA-z|\s|\d|~!@#$%^&*()_+|<>?:{}]{5,50}$/;
+/*질문 보기 유효성 검사*/
+const $questionMsg = $('.question_msg');
+const $questionInput = $('.question_input');
+const $answerInput = $('.answer_input');
+$(document).on('keyup','.question_input',function (e) {
+    const $this = $(this);
+    let val = $this.val();
+    console.log(val);
+    val = val.substr(0,50);
+    $(this).val(val);
+    if(questionExp.test(val)){
+        console.log("합격");
+        $this.removeClass("add_border");
+        $this.parent().next().next().removeClass("ok");
+    }else{
+        //2자 미만일때
+        console.log("불합격");
+        $this.addClass("add_border");
+        $this.parent().next().next().addClass("ok");
+        $questionMsg.text('최소 5자 입력해주세요');
+    }
+});
+$(document).on('keyup','.answer_input',function (e) {
+    const $this = $(this);
+    let val = $this.val();
+    console.log(val);
+    val = val.substr(0,50);
+    $(this).val(val);
+    if(questionExp.test(val)){
+        console.log("합격");
+        $this.removeClass("add_border");
+        $this.parent().next().next().removeClass("ok");
+    }else{
+        //2자 미만일때
+        console.log("불합격");
+        $this.addClass("add_border");
+        $this.parent().next().next().addClass("ok");
+        $questionMsg.text('최소 5자 입력해주세요');
+    }
+});
 /*step4 end*/
+
