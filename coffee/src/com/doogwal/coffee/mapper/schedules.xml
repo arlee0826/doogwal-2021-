@@ -12,23 +12,6 @@
 	VALUES(#{no}, #{startDate}, #{endDate}, #{name}, #{address}, #{description}, #{lat}, #{lng}, systimestamp, #{districtNo}, #{type}, #{crewNo})
 </insert>
 
-<!--박형우 start-->
-<!--20210114 start-->
-<select id="selectUpcommingGathring" parameterType="int" resultType="Gathering">
-SELECT schedules.NO, START_DATE startDate, END_DATE endDate, NAME, ADDRESS, DESCRIPTION, LAT, LNG, gatherings.REGDATE, DISTRICT_NO districtNo, TYPE, CREW_NO crewNo, fee
-from schedules JOIN gatherings ON schedules.no = gatherings.no
-where type='G' and start_date = (SELECT min(start_date)
-FROM schedules
-where crew_no=#{no} and TO_CHAR(start_date,'YYYY-MM-DD HH:mm:ss') > TO_CHAR(sysdate,'YYYY-MM-DD HH:mm:ss'))
-</select>
-	
-<select id="selectUpcommingMeeting" parameterType="int" resultType="Meeting">
-SELECT schedules.NO, START_DATE startDate, END_DATE endDate, NAME, ADDRESS, DESCRIPTION, LAT, LNG, schedules.REGDATE, DISTRICT_NO districtNo, TYPE, CREW_NO crewNo, img, point, category_no categoryNo, theme_no themeNo, place, confirmation
-from schedules JOIN meetings ON schedules.no = meetings.no
-where (type='M' or type='F') and start_date = (SELECT min(start_date)
-</select>
-<!--20210114 end-->
-<!--박형우  end-->
 
 <select id="selectOne" resultType="Gathering" parameterType="int">
 	SELECT district_no districtNo,crew_no crewNo,type,start_date startDate,end_date endDate,name,address,description,lat,lng
