@@ -15,9 +15,9 @@ public class Gathering {
 	// gatherings table
 	private int fee;// 모임이면 값이 있으나 밋팅이면 0
 
-
-	public Gathering(int fee) {
+	public Gathering(int no, int fee) {
 		super();
+		this.no = no;
 		this.fee = fee;
 	}
 

@@ -14,4 +14,8 @@
 		FROM preparations
 		WHERE schedule_no=#{no}
 	</select>
+<<<<<<< HEAD
 </mapper>  
+=======
+</mapper>  
+>>>>>>> branch 'main' of https://github.com/arlee0826/doogwal.git

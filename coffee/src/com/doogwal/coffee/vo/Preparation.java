@@ -5,15 +5,23 @@ import java.sql.Timestamp;
 
 public class Preparation {
 	private int no, scheduleNo;
-	private String prepation;
+	private String preparation;
 	private Timestamp regdate;
 	
+	public Preparation(int scheduleNo, String preparation) {
+		super();
+		this.scheduleNo = scheduleNo;
+		this.preparation = preparation;
+	}
 	public Preparation() {
 	}
-	public Preparation(int no, int scheduleNo, String prepation) {
+	
+	public Preparation(int no, int scheduleNo, String preparation, Timestamp regdate) {
+		super();
 		this.no = no;
 		this.scheduleNo = scheduleNo;
-		this.prepation = prepation;
+		this.preparation = preparation;
+		this.regdate = regdate;
 	}
 	public int getNo() {
 		return no;
@@ -27,11 +35,11 @@ public class Preparation {
 	public void setScheduleNo(int scheduleNo) {
 		this.scheduleNo = scheduleNo;
 	}
-	public String getPrepation() {
-		return prepation;
+	public String getPreparation() {
+		return preparation;
 	}
-	public void setPrepation(String prepation) {
-		this.prepation = prepation;
+	public void setPreparation(String preparation) {
+		this.preparation = preparation;
 	}
 	
 }

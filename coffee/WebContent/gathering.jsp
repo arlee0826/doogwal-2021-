@@ -1,5 +1,27 @@
+<%@page import="com.doogwal.coffee.dao.PreparationsDAO"%>
+<%@page import="com.doogwal.coffee.vo.Preparation"%>
+<%@page import="java.util.List"%>
+<%@page import="com.doogwal.coffee.dao.SchedulesDAO"%>
+<%@page import="com.doogwal.coffee.dao.GatheringsDAO"%>
+<%@page import="com.doogwal.coffee.vo.Gathering"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+	//파라미터 no를 얻기
+//	String noStr = request.getParameter("no");
+	//형변환
+//	int no = Integer.parseInt(noStr);
+	int no = 500;
+
+	Gathering gathering = GatheringsDAO.selectOne(no);
+	Gathering schedule = SchedulesDAO.selectOne(no);
+	List<Preparation> preparations = PreparationsDAO.selectList(no);
+	
+	String date = String.valueOf(schedule.getStartDate());
+	String[] timeToken = date.split(" ");
+	String endTime = String.valueOf(schedule.getEndDate());
+	String[] endTimeToken = endTime.split(" ");
+%>   
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -276,17 +298,17 @@
             <tr>
                 <td class="first_td">모임 이름</td>
                 <td class="second_td">
-                    <p class="meet_name">두괄조 서울대 입구</p>
+                    <p class="meet_name"><%=schedule.getName()%></p>
                 </td>
             </tr>
             <tr>
                 <td class="first_td">날짜</td>
                 <td class="second_td">
-                    <input type="date" class="date_input" disabled>
-                    <input type="time" class="input_time" disabled>
+                    <input type="date" class="date_input" disabled value="<%=timeToken[0]%>">
+                    <input type="time" class="input_time" disabled value="<%=timeToken[1]%>">
                     <span class="">~</span>
-                    <input type="time" class="input_time" disabled>
-                    <label class="check_date"><input type="checkbox" disabled>하루종일</label>
+                    <input type="time" class="input_time" disabled value="<%=endTimeToken[1]%>">
+                    <!--<label class="check_date"><input type="checkbox" disabled>하루종일</label>-->
                 </td>
             </tr>
             <tr class="local_input">
@@ -296,30 +318,29 @@
                         <input type="text" id="sample5_address" placeholder="주소">
                         <input id="address_content" type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
                     </div>
-                    <label for="address_content" class="my_address_label" id="addressContent">주소 찾기</label>
+                    <label for="address_content" class="my_address_label" id="addressContent"><%=schedule.getAddress()%></label>
                 </td>
             </tr>
             <tr class="detail_input">
                 <td class="first_td">상세</td>
                 <td class="second_td">
                     <p class="meet_content">
-                        한국어 맞춤법/문법 검사기는 부산대학교 인공지능연구실과 (주)나라인포테크가 함께 만들고 있습니다.
-                        이 검사기는 개인이나
-                        학생만 무료로 사용할 수 있습니다. QWERTYASDFFGZ
+               <%=schedule.getDescription()%>
                     </p>
                 </td>
             </tr>
             <tr>
                 <td class="first_td">회비</td>
                 <td class="second_td">
-                    <p class="dues">11500원</p>
+                    <p class="dues"><%=gathering.getFee()%>원</p>
                 </td>
             </tr>
             <tr>
                 <td class="first_td">준비물</td>
                 <td class="second_td">
-                    <p class="materials_item"><i class="far fa-check-square"></i>마음만 가져오지말고 돈</p>
-                    <p class="materials_item"><i class="far fa-check-square"></i>돈이 있어야 즐겁다. </p>
+                <% for( Preparation preparation : preparations) { %>
+                    <p class="materials_item"><i class="far fa-check-square"></i><%=preparation.getPreparation()%></p>
+                    <%} %>
                 </td>
             </tr>
             <div id="map" class="local_map"></div>
@@ -380,7 +401,7 @@
     //--------------------------------------------------------------------------------주소 찾기 . 지도 보이기
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
-            center: new daum.maps.LatLng(37.0013545214342, 127.648247356919), // 지도의 중심좌표
+            center: new daum.maps.LatLng(<%=schedule.getLat()%>, <%=schedule.getLng()%>), // 지도의 중심좌표
             level: 5 // 지도의 확대 레벨
         };
     //지도를 미리 생성

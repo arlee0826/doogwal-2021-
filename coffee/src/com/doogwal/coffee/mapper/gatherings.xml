@@ -7,10 +7,16 @@
 
 
 <insert id="insert" parameterType="Gathering">
-
 	INSERT INTO gatherings(no, fee, regdate)
-	VALUES(5000,#{fee},sysdate)
-
+	VALUES(#{no},#{fee},sysdate)
 </insert>
+
+<select id="selectOne" resultType="Gathering" parameterType="int">
+	SELECT no,fee
+	FROM gatherings
+	WHERE no=#{no}
+</select>
+
+
 </mapper>  
 
